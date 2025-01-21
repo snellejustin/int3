@@ -72,7 +72,8 @@ h3 {
 .header__image,
 .attack__knife,
 .collage,
-.interaction__lever {
+.interaction__lever,
+.image__narrator {
   width: 100vw;
   height: auto;
 }
@@ -83,6 +84,7 @@ h3 {
 
 .text__attack {
   padding-top: 4rem;
+  margin-top: 0rem;
 }
 
 .attack__collage {
@@ -212,9 +214,149 @@ h3 {
   color: #FFFEF4;
 }
 
+.text__narrator{
+  padding: 2rem;
+  padding-top: 3rem;
+  background-color: #5B3A29;
+  color: #FFFEF4;
+  margin: 0;
+}
+
+.narrator__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 @media (min-width: 768px) {
   .button {
     min-width: 170px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.hidden {
+  display: none;
+}
+
+main {
+  max-width: var(--max-page-width);
+  margin: 0 auto;
+}
+
+dl {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: max-content max-content;
+}
+
+/* start menu stuff */
+
+.nav a:any-link {
+  color: black;
+  text-decoration: none;
+}
+
+.nav {
+  margin: 0 auto 2rem auto;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  max-width: var(--max-page-width);
+  display: grid;
+}
+
+.nav--fixed {
+  position: fixed;
+  width: calc(100% - 2rem);
+  top: 0;
+  padding-top: 1rem;
+  background-color: #FFFEF4;
+  border-bottom: 1px solid #333;
+}
+
+.nav__button {
+  grid-row: 1;
+  grid-column: 2;
+  align-self: center;
+  justify-self: end;
+  
+  /* reset button styles */
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1;
+  background: transparent;
+  appearance: none;
+  color: black; /*safari*/
+}
+
+.nav__button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.nav__list {
+  grid-row: 2;
+  grid-column: 1 / span 2;
+  padding: 0;
+}
+
+.nav__link {
+  display: block;
+  text-align: center;
+  padding: .5em;
+}
+
+.nav__link:hover{
+  background-color: var(--primary-color);
+}
+
+.nav__item{
+  list-style: none;
+}
+
+@media screen and (min-width: 45em){  
+  .nav {
+    grid-template-columns: min-content auto;
+    align-items: center;
+    gap: 1rem
+  }
+  
+  .nav__title {
+    grid-row: 1;
+    grid-column: 1;
+    margin: 0;
+  }
+  
+  .nav__button {
+    display: none;
+  }
+   
+  .nav__list {
+    grid-row: 1;
+    display: flex;
+    justify-content: space-between;
+    margin-inline-start: auto;
+  }
+  
+  .nav__item, .nav__item:last-of-type{
+    border: none;
+  }
+  
+  .nav__link  {
+     padding-inline: 2rem;
   }
 }

@@ -9,8 +9,32 @@
   <title>integration 3</title>
 </head>
 
-<nav>
-  <div><img src="./assets/logo.png" alt="logo plantin moretus museum"></div>
+<svg style="display:none">
+  <symbol id="navicon" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M21 11h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+    <path d="M3 7h18c0.6 0 1-0.4 1-1s-0.4-1-1-1h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1z"></path>
+    <path d="M21 17h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+  </symbol>
+  <symbol id="close" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19.1,17.7L6.3,4.9c-.4-.4-1-.4-1.4,0s-.4,1,0,1.4l12.7,12.7c.4.4,1,.4,1.4,0s.4-1,0-1.4Z" />
+    <path d="M6.3,19.1l12.7-12.7c.4-.4.4-1,0-1.4s-1-.4-1.4,0l-12.7,12.7c-.4.4-.4,1,0,1.4s1,.4,1.4,0Z" />
+  </symbol>
+</svg>
+
+<nav class="nav">
+  <img src="./assets/logo.png" alt="logo plantin moretus">
+  <button class="nav__button hidden" aria-label="Navigation menu" aria-expanded="false" aria-controls="nav__list">
+    <svg role="img" aria-labelledby="svg-title" focusable="false">
+      <title id="svg-title">Menu</title>
+      <use id="iconlink" xlink:href="#navicon"></use>
+    </svg>
+  </button>
+  <ul class="nav__list" id="nav__list">
+    <li class="nav__item"><a class="nav__link" href="/#">Plan your visit</a></li>
+    <li class="nav__item"><a class="nav__link" href="/#">What is there to see</a></li>
+    <li class="nav__item"><a class="nav__link" href="/#">Collection & research</a></li>
+    <li class="nav__item"><a class="nav__link" href="/#">About us</a></li>
+  </ul>
 </nav>
 
 <body>
@@ -34,9 +58,13 @@
       I’ve worked in his shop for many years, and though I see him every day, there’s a part of him that feels like a
       closed
       book.</p>
-    <!-- <div>
-      under construction
-    </div> -->
+    <div class="narrator__box">
+      <img class="image__narrator" src="./assets/jaques.png" alt="image of narrator">
+      <p class="text__general text__narrator">Hi i’m Jaques, one of his oldest employees, i’m what they call an open book.<br><br>
+        Throughout my time at the printing press, i racked up a bunch of interesting stories, today i’ll tell some of
+        those to
+        you, but keep your mouth shut! Plantin doesn’t like it when i run my mouth...</p>
+    </div>
   </div>
 
   <div class="attack__box">
@@ -159,14 +187,19 @@
     </div>
     <div>
       <h3>Friends at auction</h3>
-      <p class="text__general">He always has some tricks to outsmart everyone, when the company went bankrupt because of creditors, his
+      <p class="text__general">He always has some tricks to outsmart everyone, when the company went bankrupt because of
+        creditors, his
         friends bought
         the company at the public auction. This way we could continue to work for Plantin, as sneaky as it is, i must
         admire him
         for these moves!</p>
-        <div><img class="collage" src="./assets/auction-collage.png" alt="collage"></div>
+      <div><img class="collage" src="./assets/auction-collage.png" alt="collage"></div>
     </div>
   </div>
+
+  <script type="module" src="./script.js"></script>
 </body>
+
+
 
 </html>
