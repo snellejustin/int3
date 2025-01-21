@@ -2,6 +2,19 @@
 
 :root {}
 
+*,
+*::before,
+::after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  width: 100vw;
+  box-sizing: inherit;
+}
+
 html {
   background-color: #FFFEF4;
 }
@@ -220,7 +233,8 @@ h3 {
   color: #FFFEF4;
   margin: 0;
 }
-.horizontal__text--wrapper{
+
+.horizontal__text--wrapper {
   padding: 2rem;
   display: flex;
   justify-content: center;
@@ -265,7 +279,8 @@ dl {
   text-decoration: none;
 }
 
-.nav {
+.nav,
+.nav--fixed {
   margin: 0 auto 2rem auto;
   padding-top: 1.5rem;
   padding-left: 1.5rem;
@@ -276,9 +291,7 @@ dl {
 
 .nav--fixed {
   position: fixed;
-  width: calc(100% - 2rem);
-  top: 0;
-  padding-top: 1rem;
+  width: 100%;
   background-color: #FFFEF4;
   border-bottom: 1px solid #333;
 }
@@ -369,9 +382,100 @@ dl {
   overflow: scroll;
 }
 
-.horizontal__box--item{
+.horizontal__box--item {
   height: 650px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
+
+/*footer*/
+
+footer {
+  border-top: #333 solid 1px;
+}
+
+.newsletter {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 15px 10px;
+}
+
+.newsletter p {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.newsletter form {
+  display: inline-flex;
+  align-items: center;
+}
+
+.newsletter input[type="email"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  outline: none;
+  width: 200px;
+}
+
+.newsletter button {
+  padding: 8px 15px;
+  background-color: #333;
+  color: #FFFEF4;
+  border: none;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+
+.footer__content {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #333;
+  justify-content: space-between;
+  padding-top: 2rem;
+  padding-left: 1.5rem;
+}
+
+.footer__links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer__links li {
+  margin-bottom: 5px;
+}
+
+.footer__links a {
+  color: #FFFEF4;
+  text-decoration: none;
+}
+
+.footer__links a:hover {
+  text-decoration: underline;
+}
+
+.contact__info p {
+  color: #FFFEF4;
+}
+
+.contact__info a {
+  color: #FFFEF4;
+  text-decoration: none;
+}
+
+.contact__info a:hover {
+  text-decoration: underline;
+}
+
+.social__icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 3rem;
+}
+
+.social__icons a img {
+  width: 4rem;
+  height: auto;
 }
