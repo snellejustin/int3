@@ -143,7 +143,7 @@ h3 {
   flex-direction: row;
 }
 
-.button__box{
+.button__box {
   justify-content: center;
   align-items: center;
 }
@@ -214,12 +214,19 @@ h3 {
   color: #FFFEF4;
 }
 
-.text__narrator{
-  padding: 2rem;
-  padding-top: 3rem;
-  background-color: #5B3A29;
+.text__horizontal--box {
+  /* padding-top: 3rem; */
+  /* background-color: #5B3A29; */
   color: #FFFEF4;
   margin: 0;
+}
+.horizontal__text--wrapper{
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5B3A29;
+  min-height: 240px;
 }
 
 .narrator__box {
@@ -236,15 +243,7 @@ h3 {
   }
 }
 
-
-
-
-
-
-
-
-
-
+/* navigation css */
 
 .hidden {
   display: none;
@@ -260,8 +259,6 @@ dl {
   gap: 1rem;
   grid-template-columns: max-content max-content;
 }
-
-/* start menu stuff */
 
 .nav a:any-link {
   color: black;
@@ -291,7 +288,7 @@ dl {
   grid-column: 2;
   align-self: center;
   justify-self: end;
-  
+
   /* reset button styles */
   border: none;
   margin: 0;
@@ -300,7 +297,8 @@ dl {
   line-height: 1;
   background: transparent;
   appearance: none;
-  color: black; /*safari*/
+  color: black;
+  /*safari*/
 }
 
 .nav__button svg {
@@ -320,43 +318,60 @@ dl {
   padding: .5em;
 }
 
-.nav__link:hover{
+.nav__link:hover {
   background-color: var(--primary-color);
 }
 
-.nav__item{
+.nav__item {
   list-style: none;
 }
 
-@media screen and (min-width: 45em){  
+@media screen and (min-width: 45em) {
   .nav {
     grid-template-columns: min-content auto;
     align-items: center;
     gap: 1rem
   }
-  
+
   .nav__title {
     grid-row: 1;
     grid-column: 1;
     margin: 0;
   }
-  
+
   .nav__button {
     display: none;
   }
-   
+
   .nav__list {
     grid-row: 1;
     display: flex;
     justify-content: space-between;
     margin-inline-start: auto;
   }
-  
-  .nav__item, .nav__item:last-of-type{
+
+  .nav__item,
+  .nav__item:last-of-type {
     border: none;
   }
-  
-  .nav__link  {
-     padding-inline: 2rem;
+
+  .nav__link {
+    padding-inline: 2rem;
   }
+}
+
+/*end navigation css */
+
+.horizontal__box {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  overflow: scroll;
+}
+
+.horizontal__box--item{
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
