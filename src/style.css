@@ -50,6 +50,11 @@ h3 {
   font-optical-sizing: auto;
 }
 
+.logo {
+  width: 3rem;
+  height: auto;
+}
+
 .text__general {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
@@ -125,6 +130,13 @@ h3 {
 }
 
 .info__box--yellow {
+  background-color: #D4A017;
+  padding: 1rem;
+  align-items: center;
+  margin: 2.5rem;
+}
+
+.info__box--yellow--germany {
   background-color: #D4A017;
   padding: 1rem;
   align-items: center;
@@ -478,4 +490,67 @@ footer {
 .social__icons a img {
   width: 4rem;
   height: auto;
+}
+
+.gulden__box {
+  background-image: url(../public/assets/background-paper.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text__gulden--box {
+  width: 90vw;
+}
+
+.gulden__box--item {
+  height: 100vh;
+  justify-content: center;
+}
+
+.gulden__collage {
+  height: 70vh;
+  width: auto;
+}
+
+.germany__collage {
+  height: 80vh;
+  width: auto;
+}
+
+.footprints {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footprints__item {
+  width: 50vw;
+  height: auto;
+}
+
+.info__box--polyglot {
+  max-width: 80vw;
+  background-color: #D4A017;
+  padding: .5rem;
+}
+
+.germany__box {
+  background-image: url(../public/assets/germany-collage.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  flex-direction: row;
+  background-position: bottom;
+  align-self: flex-end;
+}
+
+.germany__box--item {
+  width: 30rem;
+  height: 100%;
+  justify-content: center;
+}
+
+.text__germany {
+  max-width: 80vw;
+  margin-top: 5rem;
 }
