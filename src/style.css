@@ -12,6 +12,7 @@ body,
 html {
   margin: 0;
   width: 100vw;
+  height: 100%;
   box-sizing: inherit;
 }
 
@@ -107,6 +108,12 @@ h4 {
 
 .interaction__lever {
   margin-left: -5rem;
+  transition: all 2s ease-in-out;
+  transform-origin: 0 50%;
+}
+
+.interaction__lever--pulled {
+  transform: rotate(35deg);
 }
 
 .text__attack {
@@ -120,7 +127,7 @@ h4 {
 
 .attack__box,
 .languages__box {
-  background-image: url(../public/assets/background-paper.png);
+  background-image: url(../assets/background-paper.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -153,14 +160,14 @@ h4 {
 }
 
 .info__box--red::before {
-  content: url(../public/assets/red-info.svg);
+  content: url(../assets/red-info.svg);
   position: absolute;
   margin-top: -11rem;
   left: 40%;
 }
 
 .info__box--yellow::before {
-  content: url(../public/assets/yellow-info.svg);
+  content: url(../assets/yellow-info.svg);
   position: absolute;
   margin-top: -9rem;
   left: 40%;
@@ -470,7 +477,7 @@ footer {
 }
 
 .gulden__box {
-  background-image: url(../public/assets/background-paper.png);
+  background-image: url(../assets/background-paper.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -512,7 +519,7 @@ footer {
 }
 
 .germany__box {
-  background-image: url(../public/assets/germany-collage.png);
+  background-image: url(../assets/germany-collage.png);
   background-repeat: no-repeat;
   background-size: contain;
   display: flex;
@@ -545,6 +552,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+  overflow-x: hidden;
 }
 
 .card {
@@ -552,7 +560,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url(../public/assets/background-letters.png);
+  background-image: url(../assets/background-letters.png);
   background-repeat: no-repeat;
   background-size: cover;
   margin: 1rem;
@@ -600,7 +608,8 @@ footer {
   z-index: 1;
   transform: rotate(3.5deg);
 }
-.score__devider{
+
+.score__devider {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -684,7 +693,26 @@ footer {
   margin-bottom: 2rem;
 }
 
+.score__text {
+  font-family: "EB Garamond", serif;
+}
+
+.card__result h4 {
+  font-size: 2rem;
+}
+
+.score__devider p {
+  font-size: 4rem;
+  margin: 1rem;
+  font-family: "EB Garamond", serif;
+}
+
 /* end of card interaction */
+
+.stop__scrolling {
+  height: 100vh;
+  overflow-y: hidden;
+}
 
 @media screen and (min-width: 768px) {
   .nav {

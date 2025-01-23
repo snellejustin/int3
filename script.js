@@ -1,3 +1,10 @@
+gsap.registerPlugin(ScrollTrigger)
+
+let stopScrollParameter = false;
+const body = document.querySelector('.body')
+const lever = document.querySelector('.interaction__lever')
+let audioPlayed = false;
+
 let score = 0;
 
 let questionAnswered1 = false;
@@ -26,7 +33,7 @@ const card6 = document.querySelector('.card__6')
 const card7 = document.querySelector('.card__7')
 
 const scoreTag = document.querySelector('.user__score')
-let scoreText = document.querySelector('.letter__text')
+let scoreText = document.querySelector('.letter__text--result')
 
 const answerQuestion = () => {
     if (!questionAnswered1) {
@@ -78,30 +85,28 @@ const answerQuestion = () => {
 
     buttonRestart.addEventListener('click', () => {
         [card1, card2, card3, card4, card5, card6].forEach(card => card.classList.remove('card__next--right', 'card__next--left'));
+        score = 0;
     })
-
 }
-
 
 const overviewHandler = (score) => {
     scoreTag.innerHTML = `${score}`
     console.log(score)
     if (score === 0) {
-        scoreText = 'text1'
+        scoreText.innerHTML = 'text1'
     }
     if (score === 1) {
-        scoreText = 'text2'
+        scoreText.innerHTML = 'text2'
     }
     if (score === 2) {
-        scoreText = 'text3'
+        scoreText.innerHTML = "You matched 2 out of 3 answers with Plantin, a true printmaking icon. It's fascinating to find common ground with such a historic master.Who knew you'd share a streak with Plantin's legacy?"
     }
     if (score === 3) {
-        scoreText = 'text4'
+        scoreText.innerHTML = 'text4'
     }
 }
 
-const init = () => {
-
+const navigationHandler = () => {
     const $nav = document.querySelector('.nav');
     const $navButton = document.querySelector('.nav__button');
     const $navList = document.querySelector('.nav__list');
@@ -149,9 +154,45 @@ const init = () => {
             closeNavigation();
         }
     });
+}
 
 
+const stopScrollHandler = () => {
+    ScrollTrigger.create({
+        trigger: '.interaction__lever',
+        start: 'top 40%',
+        end: 'top 39%',
+        onEnter: () => {
+            if (!stopScrollParameter) {
+                stopScroll()
+                console.log('triggered')
+            }
+        }
+    })
+}
+
+const leverAudio = () => {
+    const audio = new Audio('./assets/wooden-lever.mp3');
+    audio.play();
+}
+
+const stopScroll = () => {
+    body.classList.add('stop__scrolling')
+    lever.addEventListener('click', () => {
+        body.classList.remove('stop__scrolling')
+        lever.classList.add('interaction__lever--pulled')
+        if (!audioPlayed) {
+            leverAudio();
+            audioPlayed = true;
+        };
+    })
+    stopScrollParameter = true;
+}
+
+const init = () => {
+    navigationHandler();
     answerQuestion()
+    stopScrollHandler()
 }
 
 

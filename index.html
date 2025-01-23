@@ -37,7 +37,7 @@
   </ul>
 </nav>
 
-<body>
+<body class="body">
   <div class="header__box">
     <h1 class="header__title">PLANTIN'S SECRETS</h1>
     <div><img class="header__image" src="./assets/header-image-mobile.png" alt="header image of Plantin"></div>
@@ -90,7 +90,6 @@
       <div class="antwerp__box horizontal__box--item">
         <img class="collage collage__antwerp" src="./assets/antwerp-collage.png" alt="collage of Antwerp">
         <div class="horizontal__text--wrapper">
-
           <p class="text__general text__horizontal--box">Plantin and his wife moved to Antwerp, probably because of his
             big ambitions, what can
             I say, it was the right move to
@@ -390,13 +389,13 @@
         <div class="card card__7 card__result">
           <h4>Your Results</h4>
           <div class="score__devider">
-            <p class="user__score">0</p>
+            <p class="user__score score__text">0</p>
             <svg width="29" height="67" viewBox="0 0 29 67" fill="none" xmlns="http://www.w3.org/2000/svg">
               <line x1="28.4611" y1="0.952031" x2="1.02083" y2="66.4351" stroke="#1C1C1C" />
             </svg>
-            <div class="total">3</div>
+            <p class="total score__text">3</p>
           </div>
-          <div class="letter__text"></div>
+          <p class="letter__text letter__text--result"></p>
           <div class="next restart">
             <img src="./assets/arrow.png" alt="Arrow Right" class="arrow arrow__right arrow__right--1">
             <p><strong>RESTART</strong></p>
@@ -503,6 +502,8 @@
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script type="module" src="./script.js"></script>
 </body>
 
