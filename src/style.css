@@ -175,6 +175,7 @@ h4 {
 .button__box {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .button__box {
@@ -202,7 +203,7 @@ h4 {
   font-family: "EB Garamond", serif;
   font-style: italic;
   color: #D4A017;
-  padding-right: 2rem;
+  margin-right: 2rem;
   line-height: 100%;
 }
 
@@ -350,6 +351,9 @@ dl {
   display: block;
   text-align: center;
   padding: .5em;
+  font-size: 0.75rem;
+  font-family: "DM sans", sans-serif;
+  font-weight: bold;
 }
 
 .nav__link:hover {
@@ -359,42 +363,6 @@ dl {
 .nav__item {
   list-style: none;
 }
-
-@media screen and (min-width: 45em) {
-  .nav {
-    grid-template-columns: min-content auto;
-    align-items: center;
-    gap: 1rem
-  }
-
-  .nav__title {
-    grid-row: 1;
-    grid-column: 1;
-    margin: 0;
-  }
-
-  .nav__button {
-    display: none;
-  }
-
-  .nav__list {
-    grid-row: 1;
-    display: flex;
-    justify-content: space-between;
-    margin-inline-start: auto;
-  }
-
-  .nav__item,
-  .nav__item:last-of-type {
-    border: none;
-  }
-
-  .nav__link {
-    padding-inline: 2rem;
-  }
-}
-
-/*end navigation css */
 
 .horizontal__box {
   display: flex;
@@ -564,7 +532,7 @@ footer {
   margin-top: 5rem;
 }
 
-.explenation__interaction{
+.explenation__interaction {
   background-color: #D4A017;
   padding: 1rem;
   color: #FFFEF4;
@@ -572,6 +540,12 @@ footer {
 }
 
 /* card interaction */
+
+.card__box {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
 
 .card {
   display: flex;
@@ -582,7 +556,64 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   margin: 1rem;
+  grid-row: 1;
+  grid-column: 1;
 }
+
+.card__1 {
+  z-index: 7;
+  transform: rotate(3deg);
+  transition: all 1s ease-out;
+}
+
+.card__2 {
+  z-index: 6;
+  transform: rotate(-2deg);
+  transition: all 1s ease-out;
+}
+
+.card__3 {
+  z-index: 5;
+  transform: rotate(2deg);
+  transition: all 1s ease-out;
+}
+
+.card__4 {
+  z-index: 4;
+  transform: rotate(-4deg);
+  transition: all 1s ease-out;
+}
+
+.card__5 {
+  z-index: 3;
+  transform: rotate(1deg);
+  transition: all 1s ease-out;
+}
+
+.card__6 {
+  z-index: 2;
+  transform: rotate(-2.5deg);
+  transition: all 1s ease-out;
+}
+
+.card__7 {
+  z-index: 1;
+  transform: rotate(3.5deg);
+}
+.score__devider{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__next--right {
+  transform: translateX(100vw);
+}
+
+.card__next--left {
+  transform: translateX(-100vw);
+}
+
 
 .letter__title {
   font-size: 1.5em;
@@ -651,4 +682,65 @@ footer {
   align-items: center;
   margin-top: 3rem;
   margin-bottom: 2rem;
+}
+
+/* end of card interaction */
+
+@media screen and (min-width: 768px) {
+  .nav {
+    align-items: center;
+    gap: 1rem;
+    display: flex;
+  }
+
+  .nav__title {
+    grid-row: 1;
+    grid-column: 1;
+    margin: 0;
+  }
+
+  .nav__button {
+    display: none;
+  }
+
+  .nav__list {
+    grid-row: 1;
+    display: flex;
+    justify-content: space-between;
+    margin-inline-start: auto;
+  }
+
+  .nav__item,
+  .nav__item:last-of-type {
+    border: none;
+  }
+
+  .nav__link {
+    padding-inline: 2rem;
+  }
+
+  .header__box {
+    display: grid;
+    grid-template-areas:
+      'header__image header__image header__title'
+      'header__image header__image header__text'
+      '. header__cta .';
+  }
+
+  .header__cta {
+    grid-area: header__cta;
+  }
+
+  .header__title {
+    grid-area: header__title;
+  }
+
+  .header__image {
+    grid-area: header__image;
+    width: 60vw;
+  }
+
+  .header__intro {
+    grid-area: header__text;
+  }
 }
