@@ -1,6 +1,8 @@
 gsap.registerPlugin(ScrollTrigger)
 
-let stopScrollParameter = false;
+let stopPoint;
+let stopScrollActivated = false;
+
 const body = document.querySelector('.body')
 const lever = document.querySelector('.interaction__lever')
 let audioPlayed = false;
@@ -157,44 +159,107 @@ const navigationHandler = () => {
 }
 
 
-const stopScrollHandler = () => {
-    ScrollTrigger.create({
-        trigger: '.interaction__lever',
-        start: 'top 40%',
-        end: 'top 39%',
-        onEnter: () => {
-            if (!stopScrollParameter) {
-                stopScroll()
-                console.log('triggered')
-            }
-        }
-    })
-}
+// const stopScrollHandler = () => {
+//     ScrollTrigger.create({
+//         trigger: '.interaction__lever',
+//         start: 'top 40%',
+//         end: 'top 39%',
+//         markers: true,
+//         onEnter: () => {
+//             if (!stopScrollParameter) {
+//                 stopScroll()
+//                 console.log('triggered')
+//             }
+//         }
+//     })
+// }
 
 const leverAudio = () => {
     const audio = new Audio('./assets/wooden-lever.mp3');
     audio.play();
 }
 
+// const stopScroll = () => {
+//     body.classList.add('stop__scrolling')
+//     lever.addEventListener('click', () => {
+//         body.classList.remove('stop__scrolling')
+//         lever.classList.add('interaction__lever--pulled')
+//         if (!audioPlayed) {
+//             leverAudio();
+//             audioPlayed = true;
+//         };
+//     })
+//     stopScrollParameter = true;
+// }
+
+const stopScrollHandler = () => {
+    const stopElement = document.querySelector('.interaction__lever');
+    if (stopElement) {
+        // Dynamically calculate the stop point: lever position minus half the viewport height
+        const viewportMid = window.innerHeight / 2;
+        stopPoint = stopElement.offsetTop - viewportMid;
+    } else {
+        console.error('Element .interaction__lever not found');
+    }
+};
+
 const stopScroll = () => {
-    body.classList.add('stop__scrolling')
-    lever.addEventListener('click', () => {
-        body.classList.remove('stop__scrolling')
-        lever.classList.add('interaction__lever--pulled')
-        if (!audioPlayed) {
-            leverAudio();
-            audioPlayed = true;
+    if (window.scrollY >= stopPoint && !stopScrollActivated) {
+        document.body.classList.add('stop-scroll');
+        stopScrollActivated = true; // Ensure this is triggered only once
+        console.log('Scrolling stopped');
+    }
+};
+
+const leverClickHandler = () => {
+    const lever = document.querySelector('.interaction__lever');
+    if (lever) {
+        lever.onclick = () => {
+            document.body.classList.remove('stop-scroll');
+            lever.classList.add('interaction__lever--pulled');
+            if (!audioPlayed) {
+                leverAudio();
+                audioPlayed = true;
+            }
         };
-    })
-    stopScrollParameter = true;
-}
+    } else {
+        console.error('Lever element not found');
+    }
+};
+
+
+const attackHandler = () => {
+    ScrollTrigger.create({
+        trigger: '.attack__knife', // Target the knife element
+        start: 'top 20%', // When the top of the knife reaches 20% of the viewport
+        end: 'top 80%', // When the top of the knife reaches 80% of the viewport
+        markers: false, // Optional: add markers to see the scroll range
+        scrub: true, // This links the animation to the scroll position
+        onUpdate: (self) => {
+            // Use the progress of ScrollTrigger to control rotation
+            gsap.to('.attack__knife', {
+                rotation: self.progress * 180, // 360 degrees over the scroll range
+                overwrite: 'auto' // Prevents animation from stacking
+            });
+        }
+    });
+};
 
 const init = () => {
     navigationHandler();
-    answerQuestion()
-    stopScrollHandler()
-}
+    answerQuestion();
 
+    // Calculate stop point
+    // stopScrollHandler();
 
+    // // Directly assign handlers for scroll and resize
+    // window.onscroll = stopScroll;
+    // window.onresize = stopScrollHandler;
+
+    // // Handle lever click
+    // leverClickHandler();
+
+    attackHandler();
+};
 
 init();

@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href=".src/reset.css">
   <link rel="stylesheet" href="./src/style.css">
   <title>integration 3</title>
 </head>
@@ -52,21 +53,20 @@
     </div>
   </div>
 
-  <div>
-    <h2>The early days</h2>
-    <p class="text__general">Ah, where to begin? Our master, Christophe Plantin, is a man of mystery.<br><br>
-      I’ve worked in his shop for many years, and though I see him every day, there’s a part of him that feels like a
-      closed
-      book.</p>
+  <div class="early__days--wrapper">
+    <div class="early__days--box">
+      <h2>The early days</h2>
+      <p class="text__general">Ah, where to begin? Our master, Christophe Plantin, is a man of mystery.<br><br>
+        I’ve worked in his shop for many years, and though I see him every day, there’s a part of him that feels like a
+        closed
+        book.</p>
+    </div>
     <div class="horizontal__box">
       <div class="narrator__box horizontal__box--item">
         <img class="image__narrator" src="./assets/jaques.png" alt="image of narrator">
         <div class="horizontal__text--wrapper">
 
-          <p class="text__general text__horizontal--box">Hi i’m Jaques, one of his oldest employees, i’m what they call
-            an
-            open
-            book.<br><br>
+          <p class="text__general text__horizontal--box">Hi i’m Jaques, one of his oldest employees.
             Throughout my time at the printing press, i racked up a bunch of interesting stories, today i’ll tell some
             of
             those to
@@ -100,98 +100,121 @@
   </div>
 
   <div class="attack__box">
-    <p class="text__general text__attack">An older worker told me he was a bookbinder at first. But one night, while
+    <p class="text__general text__attack text__attack--1">An older worker told me he was a bookbinder at first. But one
+      night, while
       Plantin was
       pondering the streets of Antwerp,
       he got attacked!</p>
-    <div><img class="attack__knife" src="./assets/hand-knife.png" alt="hand holding knife"></div>
-    <div><img class="collage" src="./assets/attack-collage.png" alt="collage"></div>
+    <p class="text__general text__attack text__attack--2">The injury to his arm left him unable to work as a bookbinder.
+      And so he had
+      no
+      choice but
+      to go for a different
+      careerpath, he became a bookbinder. I tend to believe this story, it’s just too crazy to make up!
+    </p>
+    <div class="attack__knife--box"><img class="attack__knife" src="./assets/hand-knife.png" alt="hand holding knife">
+    </div>
+    <div><img class="collage" src="./assets/attack-collage.png" alt="collage">
+      <!-- <picture>
+      <source sizes="(max-width: 1400px) 100vw, 1400px" srcset="
+                                ./assets/attack-collage.png 768px,
+                                ./assets/attack-collage-long.png 4000px" type="image/avif">
+      <img src="./assets/attack-collage.png" alt="collage">
+    </picture> -->
+    </div>
   </div>
 
-  <p class="text__general text__attack">The injury to his arm left him unable to work as a bookbinder. And so he had no
-    choice but
-    to go for a different
-    careerpath, he became a bookbinder. I tend to believe this story, it’s just too crazy to make up!
-  </p>
-
   <div>
-    <h2>The art of book printing</h2>
-    <p class="text__general">Well, before i can tell you the juicy stories, i’ll first give some information on what
-      book printing actually
-      is, don’t
-      worry i’ll keep it short and easy to understand!</p>
-    <div>
-      <h3>Setting the type</h3>
-      <p class="text__general">First things first, setting the type. It all begins with selecting tiny metal letters,
-        each one carefully
-        chosen and
-        arranged in reverse order. Line by painstaking line, these letters are assembled into a block of text, ready to
-        tell a
-        story or share a piece of knowledge. The process demands incredible focus and patience, as a single mistake—a
-        letter
-        placed in the wrong spot or upside down—can ruin an entire page.</p>
-      <div><img class="collage" src="./assets/type-collage.png" alt="collage"></div>
+    <div class="bookprinting__box">
+      <h2>The art of book printing</h2>
+      <p class="text__general">Well, before i can tell you the juicy stories, i’ll first give some information on what
+        book printing actually
+        is, don’t
+        worry i’ll keep it short and easy to understand!</p>
     </div>
-    <div>
-      <h3>The printing press</h3>
-      <p class="text__general">Once the type is set, the next step is to bring it to life with ink. We begin by coating
-        the surface of the type with
-        ink, applied using soft leather pads called ink balls. These pads are expertly dabbed and rolled across the tiny
-        metal
-        letters. It’s a delicate process, too much ink, and the letters will smudge, too little, and the impression will
-        be
-        faint. The ink itself is thick and rich, with a distinct smell that fills the air.</p>
-      <div><img class="collage" src="./assets/press-collage.png" alt="collage"></div>
-      <div class="info__box--red">
-        <p class="text__general info__text">For a long time they believed the leather part was made of dogskin. This was
-          never confirmed so believe what you want!</p>
+    <div class="settingtype__box">
+      <div class="settingtype__text">
+        <h3>Setting the type</h3>
+        <p class="text__general">First things first, setting the type. It all begins with selecting tiny metal letters,
+          each one carefully
+          chosen and
+          arranged in reverse order. Line by painstaking line, these letters are assembled into a block of text, ready
+          to
+          tell a
+          story or share a piece of knowledge. The process demands incredible focus and patience, as a single mistake—a
+          letter
+          placed in the wrong spot or upside down—can ruin an entire page.</p>
       </div>
+      <div><img class="collage collage__settingtype" src="./assets/type-collage.png" alt="collage"></div>
     </div>
-    <div>
-      <h3>Pull the lever</h3>
-      <p class="text__general">Are you ready to print the next page? Use all your force and pull down the lever!</p>
-      <div><img class="interaction__lever" src="./assets/lever.png" alt="lever"></div>
-      <div class="info__box--yellow">
-        <p class="text__general info__text">For a long time they believed the leather part was made of dogskin. This was
-          never
-          confirmed so believe what you want!</p>
+  </div>
+  <div class="press__wrapper">
+    <div class="press__box">
+      <div class="press__text">
+        <h3>The printing press</h3>
+        <p class="text__general">Once the type is set, the next step is to bring it to life with ink. We begin by
+          coating
+          the surface of the type with
+          ink, applied using soft leather pads called ink balls. These pads are expertly dabbed and rolled across the
+          tiny
+          metal
+          letters. It’s a delicate process, too much ink, and the letters will smudge, too little, and the impression
+          will
+          be
+          faint. The ink itself is thick and rich, with a distinct smell that fills the air.</p>
       </div>
+      <div><img class="collage collage__press" src="./assets/press-collage.png" alt="collage"></div>
     </div>
-    <div class="languages__box">
-      <p class="text__general">
-        Printing is about so much more than just technique. It’s not just setting type, inking plates, and pulling
-        levers—it’s
-        about bringing ideas to life. It’s about stories, knowledge, and the way words can connect us all.<br><br>
+    <div class="info__box--red">
+      <p class="text__general info__text">For a long time they believed the leather part was made of dogskin. This was
+        never confirmed so believe what you want!</p>
+    </div>
+  </div>
+  <div>
+    <h3>Pull the lever</h3>
+    <p class="text__general">Are you ready to print the next page? Use all your force and pull down the lever!</p>
+    <div><img class="interaction__lever" src="./assets/lever.png" alt="lever"></div>
+    <div class="info__box--yellow">
+      <p class="text__general info__text">This handle is part of the press. It is used to imprint the letters on te
+        paper. This is really heavy, only my strongest
+        colleagues can work the lever a full day!</p>
+    </div>
+  </div>
+  <div class="languages__box">
+    <p class="text__general">
+      Printing is about so much more than just technique. It’s not just setting type, inking plates, and pulling
+      levers—it’s
+      about bringing ideas to life. It’s about stories, knowledge, and the way words can connect us all.<br><br>
 
-        In our shop, we print books in Latin, Greek, Hebrew, and even more languages. It’s fascinating how words from so
-        many
-        places come together here, on our presses.
-      </p>
+      In our shop, we print books in Latin, Greek, Hebrew, and even more languages. It’s fascinating how words from so
+      many
+      places come together here, on our presses.
+    </p>
+  </div>
+  <div class="illustrations__box">
+    <div class="illustrations__box--header">
+      <h3>Illustrations in the 16th century</h3>
+      <div><img class="illustrations__collage--header" src="./assets/woodblock1-collage.png" alt="collage"></div>
     </div>
-    <div class="illustrations__box">
-      <div class="illustrations__box--header">
-        <h3>Illustrations in the 16th century</h3>
-        <div><img class="illustrations__collage--header" src="./assets/woodblock1-collage.png" alt="collage"></div>
-      </div>
-      <p class="text__general text__illustrations">We also use intricate woodblocks
-        for illustrations. These are carved by
-        master artisans, their designs mirroring
-        the intricacy of the written word. <br><br>
-        Sometimes, I watch them at work and marvel at their skill. A single woodblock can take days to carve, but the
-        result?</p>
-      <div class="illustrations__box--quote">
-        <div><img class="illustrations__collage--quote" src="./assets/woodblock2-collage.png" alt="collage"></div>
-        <p class="illustrations__quote">A masterpiece
-          on every page. </p>
-      </div>
-      <p class="text__general">psst... I know where we store 14.000 more of these wooden blocks, visit the museum in
-        Antwerp to check them out in real
-        life!</p>
-      <div class="button__box">
-        <button class="button button__visit" role="button">Plan your visit</button>
-        <button class="button button__collection" role="button">Collection</button>
-      </div>
+    <p class="text__general text__illustrations">We also use intricate woodblocks
+      for illustrations. These are carved by
+      master artisans, their designs mirroring
+      the intricacy of the written word. <br><br>
+      Sometimes, I watch them at work and marvel at their skill. A single woodblock can take days to carve, but the
+      result?</p>
+    <div class="illustrations__box--quote">
+      <div><img class="illustrations__collage--quote" src="./assets/woodblock2-collage.png" alt="collage"></div>
+      <p class="illustrations__quote">A masterpiece
+        on every page. </p>
     </div>
+    <p class="text__general">psst... I know where we store 14.000 more of these wooden blocks, visit the museum in
+      Antwerp to check them out in real
+      life!</p>
+    <div class="button__box">
+      <button class="button button__visit" role="button">Plan your visit</button>
+      <button class="button button__collection" role="button">Collection</button>
+    </div>
+  </div>
   </div>
 
   <div>
@@ -502,8 +525,10 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+
+
   <script type="module" src="./script.js"></script>
 </body>
 
