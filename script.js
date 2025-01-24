@@ -215,12 +215,14 @@ const leverClickHandler = () => {
     const lever = document.querySelector('.interaction__lever');
     if (lever) {
         lever.onclick = () => {
-            document.body.classList.remove('stop-scroll');
+            // document.body.classList.remove('stop-scroll');
             lever.classList.add('interaction__lever--pulled');
             if (!audioPlayed) {
                 leverAudio();
                 audioPlayed = true;
             }
+            document.querySelector('.text__general--unrevealed').classList.add('hide');
+            document.querySelector('.text__reveal').classList.add('reveal');
         };
     } else {
         console.error('Lever element not found');
@@ -235,29 +237,24 @@ const attackHandler = () => {
         end: 'top 80%', // When the top of the knife reaches 80% of the viewport
         markers: false, // Optional: add markers to see the scroll range
         scrub: true, // This links the animation to the scroll position
-        onUpdate: (self) => {
-            // Use the progress of ScrollTrigger to control rotation
-            gsap.to('.attack__knife', {
-                rotation: self.progress * 180, // 360 degrees over the scroll range
-                overwrite: 'auto' // Prevents animation from stacking
-            });
-        }
-    });
-};
+        rotation: 180
+    
+        });
+    }
 
 const init = () => {
     navigationHandler();
     answerQuestion();
 
     // Calculate stop point
-    // stopScrollHandler();
+    stopScrollHandler();
 
-    // // Directly assign handlers for scroll and resize
+    // Directly assign handlers for scroll and resize
     // window.onscroll = stopScroll;
     // window.onresize = stopScrollHandler;
 
-    // // Handle lever click
-    // leverClickHandler();
+    // Handle lever click
+    leverClickHandler();
 
     attackHandler();
 };

@@ -116,6 +116,21 @@ h4 {
   transform: rotate(35deg);
 }
 
+.text__reveal {
+  opacity: 0;
+}
+
+.reveal {
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
+
+.hide {
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+
+
 .text__attack {
   padding-top: 4rem;
   margin-top: 0rem;
@@ -130,6 +145,10 @@ h4 {
   background-image: url(../assets/background-paper.png);
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
 }
 
 .languages__box {
@@ -171,13 +190,14 @@ h4 {
   position: absolute;
   margin-top: -9rem;
   left: 40%;
+  z-index: -1;
 }
 
 .info__text {
   color: #FFFEF4;
 }
 
-.illustrations__box--header,
+/* .illustrations__box--header,
 .illustrations__box--quote,
 .button__box {
   display: flex;
@@ -190,9 +210,11 @@ h4 {
   align-items: center;
 }
 
+*/
+
 .illustrations__collage--header,
 .illustrations__collage--quote {
-  width: 130px;
+  width: 33vw;
   height: auto;
 }
 
@@ -202,7 +224,7 @@ h4 {
 }
 
 .text__illustrations {
-  margin-top: -3rem;
+  margin-top: -1.5rem;
 }
 
 .illustrations__quote {
@@ -210,8 +232,50 @@ h4 {
   font-family: "EB Garamond", serif;
   font-style: italic;
   color: #D4A017;
-  margin-right: 2rem;
   line-height: 100%;
+}
+
+.illustrations__box {
+  display: grid;
+  grid-template-areas: 'illustrations__box--header illustrations__box--header illustrations__box--collage--1'
+    'illustrations__box--text--1 illustrations__box--text--1 illustrations__box--text--1'
+    'illustrations__box--collage--2 illustrations__box--quote illustrations__box--quote'
+    'illustrations__box--text--2 illustrations__box--text--2 illustrations__box--text--2'
+    'button__box button__box button__box';
+}
+
+.illustrations__box--header {
+  grid-area: illustrations__box--header;
+}
+
+.illustrations__box--collage--1 {
+  grid-area: illustrations__box--collage--1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.illustrations__box--collage--2 {
+  grid-area: illustrations__box--collage--2;
+}
+
+.illustrations__box--text--1 {
+  grid-area: illustrations__box--text--1;
+}
+
+.illustrations__box--text--2 {
+  grid-area: illustrations__box--text--2;
+}
+
+.illustrations__box--quote {
+  grid-area: illustrations__box--quote;
+}
+
+.button__box {
+  grid-area: button__box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button {
@@ -709,14 +773,10 @@ footer {
 
 /* end of card interaction */
 
-.stop__scrolling {
-  height: 100%;
-}
-
-body.stop-scroll {
+/* body.stop-scroll {
   overflow-y: hidden;
   height: 100vh;
-}
+} */
 
 .text__attack--2 {
   padding-top: 0rem;
@@ -787,7 +847,9 @@ body.stop-scroll {
     align-items: center;
   }
 
-  .early__days--box p, .bookprinting__box p {
+  .early__days--box p,
+  .bookprinting__box p,
+  .shady__box p {
     text-align: center;
     max-width: 60vw;
   }
@@ -821,44 +883,176 @@ body.stop-scroll {
     display: grid;
   }
 
-  .text__attack--2{
+  .text__attack--2 {
     justify-self: flex-end;
   }
 
-  .bookprinting__box{
+  .bookprinting__box,
+  .shady__box {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  .settingtype__box, .press__box{
+  .settingtype__box,
+  .press__box {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row-reverse;
   }
 
-  .press__box{
+  .press__box {
     flex-direction: row;
   }
 
-  .collage__settingtype, .collage__press{
+  .collage__settingtype,
+  .collage__press,
+  .interaction__lever,
+  .collage__auction,
+  .gulden__collage--1 {
     width: 50vw;
+    height: auto;
   }
 
-  .info__box--red{
+  .info__box--red,
+  .info__box--yellow {
     max-width: 45vw;
     align-self: center;
   }
 
-  .info__box--red::before{
+  .info__box--red::before,
+  .info__box--yellow::before {
     display: none;
   }
 
-  .press__wrapper{
+  .press__wrapper {
     display: flex;
     flex-direction: column;
   }
+
+  .lever__box {
+    display: grid;
+
+    grid-template-areas:
+      'lever text'
+      'info info';
+
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .interaction__lever {
+    grid-area: lever;
+  }
+
+  .lever__text {
+    grid-area: text;
+  }
+
+  .info__box--yellow {
+    grid-area: info;
+    justify-self: center;
+  }
+
+  .languages__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .languages__box p {
+    max-width: 60vw;
+    text-align: center;
+  }
+
+  .illustrations__box {
+    display: grid;
+    grid-template-areas: 'illustrations__box--collage--2 illustrations__box--header illustrations__box--collage--1'
+      'illustrations__box--collage--2 illustrations__box--text--1 illustrations__box--collage--1'
+      'illustrations__box--collage--2 illustrations__box--quote illustrations__box--collage--1'
+      'illustrations__box--collage--2 illustrations__box--text--2 illustrations__box--collage--1'
+      'illustrations__box--collage--2 button__box illustrations__box--collage--1';
+    justify-content: center;
+    align-items: center;
+  }
+
+  .illustrations__quote {
+    text-align: center;
+  }
+
+  .illustrations__box--collage--2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .illustrations__collage--header,
+  .illustrations__collage--quote {
+    width: 30vw;
+    height: auto;
+  }
+
+  .illustrations__box--collage--1,
+  .illustrations__box--collage--2 {
+    width: 27vw;
+  }
+
+  .illustrations__quote {
+    font-size: 36px;
+  }
+
+  .illegal__box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .illegal__letters {
+    border-left: solid 2px #333;
+    width: 70vw;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+  }
+
+  .illegal__text {
+    width: 50vw;
+  }
+
+  .auction__box {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .collage__auction{
+    transform: scaleX(-1);
+  }
+
+  .gulden__box{
+    display: grid;
+    grid-template-areas:
+      'collage-1 text-1'
+      'footsteps footsteps'
+      'text-2 .'
+      'collage-2 collage-2';
+  }
+
+  .gulden__box--text--1{
+    grid-area: text-1;
+  }
+
+  .gulden__collage--1{
+    grid-area: collage-1;
+  }
+
+  .germany__box{
+    grid-area: collage-2;
+    display: none;
+  }
+
 
 }

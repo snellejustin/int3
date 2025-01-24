@@ -4,41 +4,41 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <link rel="stylesheet" href=".src/reset.css">
   <link rel="stylesheet" href="./src/style.css">
   <title>integration 3</title>
 </head>
 
-<svg style="display:none">
-  <symbol id="navicon" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M21 11h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
-    <path d="M3 7h18c0.6 0 1-0.4 1-1s-0.4-1-1-1h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1z"></path>
-    <path d="M21 17h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
-  </symbol>
-  <symbol id="close" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M19.1,17.7L6.3,4.9c-.4-.4-1-.4-1.4,0s-.4,1,0,1.4l12.7,12.7c.4.4,1,.4,1.4,0s.4-1,0-1.4Z" />
-    <path d="M6.3,19.1l12.7-12.7c.4-.4.4-1,0-1.4s-1-.4-1.4,0l-12.7,12.7c-.4.4-.4,1,0,1.4s1,.4,1.4,0Z" />
-  </symbol>
-</svg>
-
-<nav class="nav">
-  <img class="logo" src="./assets/logo.png" alt="logo plantin moretus">
-  <button class="nav__button hidden" aria-label="Navigation menu" aria-expanded="false" aria-controls="nav__list">
-    <svg role="img" aria-labelledby="svg-title" focusable="false">
-      <title id="svg-title">Menu</title>
-      <use id="iconlink" xlink:href="#navicon"></use>
-    </svg>
-  </button>
-  <ul class="nav__list" id="nav__list">
-    <li class="nav__item"><a class="nav__link" href="/#">Plan your visit</a></li>
-    <li class="nav__item"><a class="nav__link" href="/#">What is there to see</a></li>
-    <li class="nav__item"><a class="nav__link" href="/#">Collection & research</a></li>
-    <li class="nav__item"><a class="nav__link" href="/#">About us</a></li>
-  </ul>
-</nav>
 
 <body class="body">
+  <svg style="display:none">
+    <symbol id="navicon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M21 11h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+      <path d="M3 7h18c0.6 0 1-0.4 1-1s-0.4-1-1-1h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1z"></path>
+      <path d="M21 17h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
+    </symbol>
+    <symbol id="close" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19.1,17.7L6.3,4.9c-.4-.4-1-.4-1.4,0s-.4,1,0,1.4l12.7,12.7c.4.4,1,.4,1.4,0s.4-1,0-1.4Z" />
+      <path d="M6.3,19.1l12.7-12.7c.4-.4.4-1,0-1.4s-1-.4-1.4,0l-12.7,12.7c-.4.4-.4,1,0,1.4s1,.4,1.4,0Z" />
+    </symbol>
+  </svg>
+
+  <nav class="nav">
+    <img class="logo" src="./assets/logo.png" alt="logo plantin moretus">
+    <button class="nav__button hidden" aria-label="Navigation menu" aria-expanded="false" aria-controls="nav__list">
+      <svg role="img" aria-labelledby="svg-title" focusable="false">
+        <title id="svg-title">Menu</title>
+        <use id="iconlink" xlink:href="#navicon"></use>
+      </svg>
+    </button>
+    <ul class="nav__list" id="nav__list">
+      <li class="nav__item"><a class="nav__link" href="/#">Plan your visit</a></li>
+      <li class="nav__item"><a class="nav__link" href="/#">What is there to see</a></li>
+      <li class="nav__item"><a class="nav__link" href="/#">Collection & research</a></li>
+      <li class="nav__item"><a class="nav__link" href="/#">About us</a></li>
+    </ul>
+  </nav>
   <div class="header__box">
     <h1 class="header__title">PLANTIN'S SECRETS</h1>
     <div><img class="header__image" src="./assets/header-image-mobile.png" alt="header image of Plantin"></div>
@@ -170,18 +170,22 @@
         never confirmed so believe what you want!</p>
     </div>
   </div>
-  <div>
-    <h3>Pull the lever</h3>
-    <p class="text__general">Are you ready to print the next page? Use all your force and pull down the lever!</p>
-    <div><img class="interaction__lever" src="./assets/lever.png" alt="lever"></div>
+  <div class="lever__box">
+    <div class="lever__text">
+      <h3>Pull the lever</h3>
+      <p class="text__general">Are you ready to print the next page? Use all your force and pull down the lever!</p>
+    </div>
+    <div>
+      <div><img class="interaction__lever" src="./assets/lever.png" alt="lever"></div>
+    </div>
     <div class="info__box--yellow">
       <p class="text__general info__text">This handle is part of the press. It is used to imprint the letters on te
-        paper. This is really heavy, only my strongest
+        paper. It's really heavy, only my strongest
         colleagues can work the lever a full day!</p>
     </div>
   </div>
   <div class="languages__box">
-    <p class="text__general">
+    <p class="text__general text__reveal">
       Printing is about so much more than just technique. It’s not just setting type, inking plates, and pulling
       levers—it’s
       about bringing ideas to life. It’s about stories, knowledge, and the way words can connect us all.<br><br>
@@ -190,26 +194,39 @@
       many
       places come together here, on our presses.
     </p>
+    <p class="text__general--unrevealed">
+      Pull the lever to print this page!
+    </p>
   </div>
+
+
   <div class="illustrations__box">
     <div class="illustrations__box--header">
       <h3>Illustrations in the 16th century</h3>
-      <div><img class="illustrations__collage--header" src="./assets/woodblock1-collage.png" alt="collage"></div>
     </div>
-    <p class="text__general text__illustrations">We also use intricate woodblocks
-      for illustrations. These are carved by
-      master artisans, their designs mirroring
-      the intricacy of the written word. <br><br>
-      Sometimes, I watch them at work and marvel at their skill. A single woodblock can take days to carve, but the
-      result?</p>
+    <div class="illustrations__box--collage--1">
+      <img class="illustrations__collage--header" src="./assets/woodblock1-collage.png" alt="collage">
+    </div>
+    <div class="illustrations__box--text--1">
+      <p class="text__general text__illustrations">We also use intricate woodblocks
+        for illustrations. These are carved by
+        master artisans, their designs mirroring
+        the intricacy of the written word. <br><br>
+        Sometimes, I watch them at work and marvel at their skill. A single woodblock can take days to carve, but the
+        result?</p>
+    </div>
+    <div class="illustrations__box--collage--2">
+      <img class="illustrations__collage--quote" src="./assets/woodblock2-collage.png" alt="collage">
+    </div>
     <div class="illustrations__box--quote">
-      <div><img class="illustrations__collage--quote" src="./assets/woodblock2-collage.png" alt="collage"></div>
       <p class="illustrations__quote">A masterpiece
         on every page. </p>
     </div>
-    <p class="text__general">psst... I know where we store 14.000 more of these wooden blocks, visit the museum in
-      Antwerp to check them out in real
-      life!</p>
+    <div class="illustrations__box--text--2">
+      <p class="text__general">psst... I know where we store 14.000 more of these wooden blocks, visit the museum in
+        Antwerp to check them out in real
+        life!</p>
+    </div>
     <div class="button__box">
       <button class="button button__visit" role="button">Plan your visit</button>
       <button class="button button__collection" role="button">Collection</button>
@@ -218,226 +235,245 @@
   </div>
 
   <div>
-    <h2>Shady stories</h2>
-    <p class="text__general">Now that you understand the basics of the job you deserve to know some secret
-      stories!<br><br>Master Plantin has
-      always been a man of ambition, but ambition has its risks. He printed books that others might call…
-      controversial.<br><br>There even were times he printed Illegal books, after all, he was a business man doing
-      business.</p>
-    <div>
-      <h3>Printing illegal books</h3>
-      <p class="text__general">Man oh man, printing those illegal books isn’t all that easy, there was a lot of things
-        to take into account while
-        printing them. Who do you trust? Where and when do we print them? Of course everyone would do it in a different
-        way,
-        some probably won’t even take the risk. But my boss? he is just looking to do business, so you could say taking
-        a
-        calculated risk is his hobby.</p>
-      <p class="text__general explenation__interaction">
-        Would you take the same approach as Plantin? Interact with following letters to find out!
-      </p>
+    <div class="shady__box">
+      <h2>Shady stories</h2>
+      <p class="text__general">Now that you understand the basics of the job you deserve to know some secret
+        stories!<br><br>Master Plantin has
+        always been a man of ambition, but ambition has its risks. He printed books that others might call…
+        controversial.<br><br>There even were times he printed Illegal books, after all, he was a business man doing
+        business.</p>
+    </div>
 
-      <div class="card__box">
-        <div class="card card__1">
-          <div class="card__letter--box">
-            <p class="letter__title">Dear Master Plantin,</p>
-            <div>
-              <p class="letter__text">I hope this letter finds you in good health and spirits. Regarding the next batch
-                of our special books, could you
-                advise where we should arrange for their printing?</p>
-              <p class="letter__text">Shall we use our trusted colleague in Lyon, or do you have another location in
-                mind that would raise less
-                suspicion? Your guidance on this matter is crucial, as always.</p>
-            </div>
-            <p class="letter__signature letter__text">Yours faithfully,<br>Jaques</p>
-          </div>
-          <div class="card__answer--box">
-            <p class="answer__title">WHERE WOULD YOU PRINT THE BOOKS?</p>
-            <div class="answers">
-              <div class="answer answer__A answer__A--1">
-                <h4>Answer A</h4>
-                <p>Print in house</p>
-                <img src="./assets/arrow.png" alt="Arrow Left" class="arrow arrow__left arrow__left--1">
-                <p><strong>LEFT</strong></p>
+    <div class="illegal__box">
+      <div class="illegal__text">
+        <h3>Printing illegal books</h3>
+        <p class="text__general">Man oh man, printing those illegal books isn’t all that easy, there was a lot of things
+          to take into account while
+          printing them. Who do you trust? Where and when do we print them? Of course everyone would do it in a
+          different
+          way,
+          some probably won’t even take the risk. But my boss? he is just looking to do business, so you could say
+          taking
+          a
+          calculated risk is his hobby.</p>
+        <p class="text__general explenation__interaction">
+          Would you take the same approach as Plantin? Interact with following letters to find out!
+        </p>
+      </div>
+      <div class="illegal__letters">
+        <div class="card__box">
+          <div class="card card__1">
+            <div class="card__letter--box">
+              <p class="letter__title">Dear Master Plantin,</p>
+              <div>
+                <p class="letter__text">I hope this letter finds you in good health and spirits. Regarding the next
+                  batch
+                  of our special books, could you
+                  advise where we should arrange for their printing?</p>
+                <p class="letter__text">Shall we use our trusted colleague in Lyon, or do you have another location in
+                  mind that would raise less
+                  suspicion? Your guidance on this matter is crucial, as always.</p>
               </div>
-              <div class="divider"></div>
-              <div class="answer answer__B answer__B--1">
-                <h4>Answer B</h4>
-                <p>Print in Lyon</p>
-                <img src="./assets/arrow.png" alt="Arrow Right" class="arrow arrow__right arrow__right--1">
-                <p><strong>RIGHT</strong></p>
+              <p class="letter__signature letter__text">Yours faithfully,<br>Jaques</p>
+            </div>
+            <div class="card__answer--box">
+              <p class="answer__title">WHERE WOULD YOU PRINT THE BOOKS?</p>
+              <div class="answers">
+                <div class="answer answer__A answer__A--1">
+                  <h4>Answer A</h4>
+                  <p>Print in house</p>
+                  <img src="./assets/arrow.png" alt="Arrow Left" class="arrow arrow__left arrow__left--1">
+                  <p><strong>LEFT</strong></p>
+                </div>
+                <div class="divider"></div>
+                <div class="answer answer__B answer__B--1">
+                  <h4>Answer B</h4>
+                  <p>Print in Lyon</p>
+                  <img src="./assets/arrow.png" alt="Arrow Right" class="arrow arrow__right arrow__right--1">
+                  <p><strong>RIGHT</strong></p>
+                </div>
               </div>
             </div>
-          </div>
 
-        </div>
-        <div class="card card__2">
-          <div class="card__letter--box">
-            <p class="letter__title">Dear Jaques,</p>
-            <div>
-              <p class="letter__text">Your message reached me at just the right moment. For these particular books, I
-                believe it is far too risky to print
-                them here in Antwerp. Instead, I want you to arrange for the printing to be done at our associate’s shop
-                in Lyon. Their
-                discretion and expertise are well-known, and the distance from here will provide an added layer of
-                safety.</p>
-              <p class="letter__text">Once the books are completed, have them stored securely until transport back to us
-                can be arranged without drawing
-                attention.</p>
-              <p class="letter__text">Remember, this venture requires patience and caution. Even a single misstep could
-                jeopardize us all. That said, I trust
-                in your ability to handle this with the utmost care, and I have no doubt the work will be a success</p>
-            </div>
-            <p class="letter__signature letter__text">Yours sincerely,<br>Christophe Plantin</p>
           </div>
-          <div class="next next1">
-            <img src="./assets/arrow.png" alt="Arrow Right" class="arrow arrow__right arrow__right--1">
-            <p><strong>NEXT</strong></p>
-          </div>
-        </div>
-        <div class="card card__3">
-          <div class="card__letter--box">
-            <p class="letter__title">Dear Master Plantin,</p>
-            <div>
-              <p class="letter__text">I trust this message finds you well. As we prepare for the upcoming printing, I
-                have an important question for you.
-                Should we use your name on these works, or would you prefer a pseudonym instead?</p>
-              <p class="letter__text">Your name is well-known and respected, but I understand there might be risks in
-                using it for these particular books.
-                As always, I value your guidance.</p>
-            </div>
-            <p class="letter__signature letter__text">Yours faithfully,<br>Jaques</p>
-          </div>
-          <div class="card__answer--box">
-            <p class="answer__title">WOULD YOU USE A PSEUDONYM?</p>
-            <div class="answers">
-              <div class="answer answer__A answer__A--2">
-                <h4>Answer A</h4>
-                <p>Use a pseudonym</p>
-                <img src="./assets/arrow.png" alt="Arrow Left" class="arrow arrow__left arrow__left--1">
-                <p><strong>LEFT</strong></p>
+          <div class="card card__2">
+            <div class="card__letter--box">
+              <p class="letter__title">Dear Jaques,</p>
+              <div>
+                <p class="letter__text">Your message reached me at just the right moment. For these particular books, I
+                  believe it is far too risky to print
+                  them here in Antwerp. Instead, I want you to arrange for the printing to be done at our associate’s
+                  shop
+                  in Lyon. Their
+                  discretion and expertise are well-known, and the distance from here will provide an added layer of
+                  safety.</p>
+                <p class="letter__text">Once the books are completed, have them stored securely until transport back to
+                  us
+                  can be arranged without drawing
+                  attention.</p>
+                <p class="letter__text">Remember, this venture requires patience and caution. Even a single misstep
+                  could
+                  jeopardize us all. That said, I trust
+                  in your ability to handle this with the utmost care, and I have no doubt the work will be a success
+                </p>
               </div>
-              <div class="divider"></div>
-              <div class="answer answer__B answer__B--2">
-                <h4>Answer B</h4>
-                <p>use Plantin's name</p>
-                <img src="./assets/arrow.png" alt="Arrow Right" class="arrow arrow__right arrow__right--1">
-                <p><strong>RIGHT</strong></p>
+              <p class="letter__signature letter__text">Yours sincerely,<br>Christophe Plantin</p>
+            </div>
+            <div class="next next1">
+              <img src="./assets/arrow.png" alt="Arrow Right" class="arrow arrow__right arrow__right--1">
+              <p><strong>NEXT</strong></p>
+            </div>
+          </div>
+          <div class="card card__3">
+            <div class="card__letter--box">
+              <p class="letter__title">Dear Master Plantin,</p>
+              <div>
+                <p class="letter__text">I trust this message finds you well. As we prepare for the upcoming printing, I
+                  have an important question for you.
+                  Should we use your name on these works, or would you prefer a pseudonym instead?</p>
+                <p class="letter__text">Your name is well-known and respected, but I understand there might be risks in
+                  using it for these particular books.
+                  As always, I value your guidance.</p>
               </div>
+              <p class="letter__signature letter__text">Yours faithfully,<br>Jaques</p>
             </div>
-          </div>
-        </div>
-        <div class="card card__4">
-          <div class="card__letter--box">
-            <p class="letter__title">Dear Jaques,</p>
-            <div>
-              <p class="letter__text">You raise an important question, and I agree it is prudent to tread carefully.
-                Given the sensitive nature of these
-                books, we shall use a pseudonym. My name is too closely tied to this shop and our other works, and it is
-                not wise to
-                draw undue attention to myself or our operations here.</p>
-              <p class="letter__text">Select a name that feels credible, yet distant enough from our circles to avoid
-                suspicion. Ensure the typeface and
-                imprint carry no traceable mark back to us. If inquiries arise, they must lead to dead ends. The
-                protection of our craft
-                and reputation is paramount, and this approach will shield us from unnecessary risks.</p>
-              <p class="letter__text">Proceed with the utmost care, and keep me informed of your progress.</p>
-            </div>
-            <p class="letter__signature letter__text">Yours sincerely,<br>Christophe Plantin</p>
-          </div>
-          <div class="next next2">
-            <img src="./assets/arrow.png" alt="Arrow Right" class="arrow arrow__right arrow__right--1">
-            <p><strong>NEXT</strong></p>
-          </div>
-        </div>
-        <div class="card card__5">
-          <div class="card__letter--box">
-            <p class="letter__title">Dear Master Plantin,</p>
-            <div>
-              <p class="letter__text">I write to you today with a heavy heart and a mind clouded by worry. The work we
-                do is bold, and while I admire your
-                vision and ambition, I fear that the risks are growing ever more palpable.</p>
-              <p class="letter__text">Have we taken all the precautions necessary to ensure our safety? Are our contacts
-                as reliable as they claim to be? I
-                trust in your wisdom and your ability to navigate even the most turbulent waters, but I must confess my
-                unease.</p>
-            </div>
-            <p class="letter__signature letter__text">Yours faithfully,<br>Jaques</p>
-          </div>
-          <div class="card__answer--box">
-            <p class="answer__title">DO YOU THINK WE EVER GOT CAUGHT?</p>
-            <div class="answers">
-              <div class="answer answer__A answer__A--3">
-                <h4>Answer A</h4>
-                <p>YES</p>
-                <img src="./assets/arrow.png" alt="Arrow Left" class="arrow arrow__left arrow__left--1">
-                <p><strong>LEFT</strong></p>
-              </div>
-              <div class="divider"></div>
-              <div class="answer answer__B answer__B--3">
-                <h4>Answer B</h4>
-                <p>NO</p>
-                <img src="./assets/arrow.png" alt="Arrow Right" class="arrow arrow__right arrow__right--1">
-                <p><strong>RIGHT</strong></p>
+            <div class="card__answer--box">
+              <p class="answer__title">WOULD YOU USE A PSEUDONYM?</p>
+              <div class="answers">
+                <div class="answer answer__A answer__A--2">
+                  <h4>Answer A</h4>
+                  <p>Use a pseudonym</p>
+                  <img src="./assets/arrow.png" alt="Arrow Left" class="arrow arrow__left arrow__left--1">
+                  <p><strong>LEFT</strong></p>
+                </div>
+                <div class="divider"></div>
+                <div class="answer answer__B answer__B--2">
+                  <h4>Answer B</h4>
+                  <p>use Plantin's name</p>
+                  <img src="./assets/arrow.png" alt="Arrow Right" class="arrow arrow__right arrow__right--1">
+                  <p><strong>RIGHT</strong></p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="card card__6">
-          <div class="card__letter--box">
-            <p class="letter__title">Dear Jaques,</p>
-            <div>
-              <p class="letter__text">You were right to voice your concerns, and I must now share with you news that
-                confirms the very fears you warned me
-                about. Word has reached me that the Spanish authorities have seized a shipment of our books, a
-                staggering 1000 copies.
-                These were not printed here, as it happens, but by three of our French colleagues while I was away in
-                Paris visiting an
-                old friend.</p>
-              <p class="letter__text">Their actions were bold, perhaps too bold, and now the consequences have come down
-                like a hammer. The Spanish have
-                uncovered their operation, and the punishment was swift: forced labor aboard the galleys. A grim fate
-                for anyone, but as
-                fortune would have it, they managed to escape and have now fled back to France.</p>
-              <p class="letter__text">This news is both troubling and bewildering. Their escape may have spared them,
-                but it leaves us in an uneasy position.</p>
+          <div class="card card__4">
+            <div class="card__letter--box">
+              <p class="letter__title">Dear Jaques,</p>
+              <div>
+                <p class="letter__text">You raise an important question, and I agree it is prudent to tread carefully.
+                  Given the sensitive nature of these
+                  books, we shall use a pseudonym. My name is too closely tied to this shop and our other works, and it
+                  is
+                  not wise to
+                  draw undue attention to myself or our operations here.</p>
+                <p class="letter__text">Select a name that feels credible, yet distant enough from our circles to avoid
+                  suspicion. Ensure the typeface and
+                  imprint carry no traceable mark back to us. If inquiries arise, they must lead to dead ends. The
+                  protection of our craft
+                  and reputation is paramount, and this approach will shield us from unnecessary risks.</p>
+                <p class="letter__text">Proceed with the utmost care, and keep me informed of your progress.</p>
+              </div>
+              <p class="letter__signature letter__text">Yours sincerely,<br>Christophe Plantin</p>
             </div>
-            <p class="letter__signature letter__text">Yours sincerely,<br>Christophe Plantin</p>
+            <div class="next next2">
+              <img src="./assets/arrow.png" alt="Arrow Right" class="arrow arrow__right arrow__right--1">
+              <p><strong>NEXT</strong></p>
+            </div>
           </div>
-          <div class="next next3">
-            <img src="./assets/arrow.png" alt="Arrow Right" class="arrow arrow__right arrow__right--1">
-            <p><strong>NEXT</strong></p>
+          <div class="card card__5">
+            <div class="card__letter--box">
+              <p class="letter__title">Dear Master Plantin,</p>
+              <div>
+                <p class="letter__text">I write to you today with a heavy heart and a mind clouded by worry. The work we
+                  do is bold, and while I admire your
+                  vision and ambition, I fear that the risks are growing ever more palpable.</p>
+                <p class="letter__text">Have we taken all the precautions necessary to ensure our safety? Are our
+                  contacts
+                  as reliable as they claim to be? I
+                  trust in your wisdom and your ability to navigate even the most turbulent waters, but I must confess
+                  my
+                  unease.</p>
+              </div>
+              <p class="letter__signature letter__text">Yours faithfully,<br>Jaques</p>
+            </div>
+            <div class="card__answer--box">
+              <p class="answer__title">DO YOU THINK WE EVER GOT CAUGHT?</p>
+              <div class="answers">
+                <div class="answer answer__A answer__A--3">
+                  <h4>Answer A</h4>
+                  <p>YES</p>
+                  <img src="./assets/arrow.png" alt="Arrow Left" class="arrow arrow__left arrow__left--1">
+                  <p><strong>LEFT</strong></p>
+                </div>
+                <div class="divider"></div>
+                <div class="answer answer__B answer__B--3">
+                  <h4>Answer B</h4>
+                  <p>NO</p>
+                  <img src="./assets/arrow.png" alt="Arrow Right" class="arrow arrow__right arrow__right--1">
+                  <p><strong>RIGHT</strong></p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="card card__7 card__result">
-          <h4>Your Results</h4>
-          <div class="score__devider">
-            <p class="user__score score__text">0</p>
-            <svg width="29" height="67" viewBox="0 0 29 67" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line x1="28.4611" y1="0.952031" x2="1.02083" y2="66.4351" stroke="#1C1C1C" />
-            </svg>
-            <p class="total score__text">3</p>
+          <div class="card card__6">
+            <div class="card__letter--box">
+              <p class="letter__title">Dear Jaques,</p>
+              <div>
+                <p class="letter__text">You were right to voice your concerns, and I must now share with you news that
+                  confirms the very fears you warned me
+                  about. Word has reached me that the Spanish authorities have seized a shipment of our books, a
+                  staggering 1000 copies.
+                  These were not printed here, as it happens, but by three of our French colleagues while I was away in
+                  Paris visiting an
+                  old friend.</p>
+                <p class="letter__text">Their actions were bold, perhaps too bold, and now the consequences have come
+                  down
+                  like a hammer. The Spanish have
+                  uncovered their operation, and the punishment was swift: forced labor aboard the galleys. A grim fate
+                  for anyone, but as
+                  fortune would have it, they managed to escape and have now fled back to France.</p>
+                <p class="letter__text">This news is both troubling and bewildering. Their escape may have spared them,
+                  but it leaves us in an uneasy position.</p>
+              </div>
+              <p class="letter__signature letter__text">Yours sincerely,<br>Christophe Plantin</p>
+            </div>
+            <div class="next next3">
+              <img src="./assets/arrow.png" alt="Arrow Right" class="arrow arrow__right arrow__right--1">
+              <p><strong>NEXT</strong></p>
+            </div>
           </div>
-          <p class="letter__text letter__text--result"></p>
-          <div class="next restart">
-            <img src="./assets/arrow.png" alt="Arrow Right" class="arrow arrow__right arrow__right--1">
-            <p><strong>RESTART</strong></p>
+          <div class="card card__7 card__result">
+            <h4>Your Results</h4>
+            <div class="score__devider">
+              <p class="user__score score__text">0</p>
+              <svg width="29" height="67" viewBox="0 0 29 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="28.4611" y1="0.952031" x2="1.02083" y2="66.4351" stroke="#1C1C1C" />
+              </svg>
+              <p class="total score__text">3</p>
+            </div>
+            <p class="letter__text letter__text--result"></p>
+            <div class="next restart">
+              <img src="./assets/arrow.png" alt="Arrow Right" class="arrow arrow__right arrow__right--1">
+              <p><strong>RESTART</strong></p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div>
-      <h3>Friends at auction</h3>
-      <p class="text__general">He always has some tricks to outsmart everyone, when the company went bankrupt because of
-        creditors, his
-        friends bought
-        the company at the public auction. This way we could continue to work for Plantin, as sneaky as it is, i must
-        admire him
-        for these moves!</p>
-      <div><img class="collage" src="./assets/auction-collage.png" alt="collage"></div>
+    <div class="auction__box">
+      <div class="auction__text">
+        <h3>Friends at auction</h3>
+        <p class="text__general">He always has some tricks to outsmart everyone, when the company went bankrupt because of
+          creditors, his
+          friends bought
+          the company at the public auction. This way we could continue to work for Plantin, as sneaky as it is, i must
+          admire him
+          for these moves!</p>
+      </div>
+      <div><img class="collage collage__auction" src="./assets/auction-collage.png" alt="collage"></div>
     </div>
     <div class="horizontal__box gulden__box">
-      <div class="horizontal__box--item gulden__box--item">
+      <div class="horizontal__box--item gulden__box--item gulden__box--text--1">
         <h3>Everything for freedom</h3>
         <p class="text__general text__gulden--box">One of my personal favourite stories is the one where he, and some
           other rich guys,
@@ -452,7 +488,7 @@
         </p>
       </div>
       <div class="horizontal__box--item">
-        <img class="collage gulden__collage" src="./assets/gulden-collage.png" alt="collage">
+        <img class="collage gulden__collage gulden__collage--1" src="./assets/gulden-collage.png" alt="collage">
       </div>
       <div class="horizontal__box--item gulden__box--item">
         <div class="footprints">
