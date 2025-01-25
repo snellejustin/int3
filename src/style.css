@@ -1205,7 +1205,7 @@ footer {
     grid-template-areas: 'item';
   }
 
-  .horizontal__box--item {
+  .horizontal__box--item--early {
     grid-area: item;
     flex-direction: row;
     display: flex;
@@ -1268,6 +1268,52 @@ footer {
   .lever__text {
     max-width: 40vw;
   }
+
+  .interaction__lever--box {
+    width: 60vw;
+  }
+
+  .shady__box p {
+    margin-left: 2rem;
+  }
+
+  .illegal__letters {
+    width: 50vw;
+  }
+
+  .auction__text {
+    align-self: center;
+  }
+
+  .gulden__box {
+    overflow-x: hidden;
+    display: grid;
+    grid-template-areas:
+      'area-1'
+      'footsteps'
+      'text-2'
+      'collage-2';
+  }
+
+  .gulden__box--item {
+    height: fit-content;
+  }
+
+  .germany__box--info{
+    padding-bottom: 24rem;
+  }
+
+  .germany__box--text{
+    width: 60vw;
+  }
+
+  .germany__box--info{
+    margin-left: 4rem;
+  }
+
+  .germany__box--info p {
+    margin-left: 2rem;
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -1291,6 +1337,17 @@ footer {
     font-size: 96px;
     margin-left: 3rem;
     margin-right: 3rem;
+  }
+
+  .lever__box {
+    grid-template-areas:
+      'info info'
+      'lever text';
+  }
+
+  .info__box--yellow {
+    justify-self: flex-start;
+    margin-left: 10rem;
   }
 
 }
