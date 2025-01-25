@@ -438,7 +438,7 @@ dl {
 .horizontal__box {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: baseline;
   overflow: scroll;
 }
 
@@ -782,6 +782,11 @@ footer {
   padding-top: 0rem;
 }
 
+.gulden__box--area--1 {
+  display: flex;
+  flex-direction: row;
+}
+
 @media screen and (min-width: 768px) {
   .nav {
     align-items: center;
@@ -1028,31 +1033,264 @@ footer {
     align-items: flex-end;
   }
 
-  .collage__auction{
+  .collage__auction {
     transform: scaleX(-1);
   }
 
-  .gulden__box{
+  .gulden__box {
+    overflow-x: hidden;
     display: grid;
     grid-template-areas:
-      'collage-1 text-1'
-      'footsteps footsteps'
-      'text-2 .'
-      'collage-2 collage-2';
+      'area-1'
+      'footsteps'
+      'text-2'
+      'collage-2';
   }
 
-  .gulden__box--text--1{
-    grid-area: text-1;
+  .gulden__box--area--1 {
+    grid-area: area-1;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: anchor-center;
   }
 
-  .gulden__collage--1{
+  .gulden__box--text--1 p {
+    width: 42vw;
+    height: auto;
+  }
+
+  .gulden__collage--1 {
     grid-area: collage-1;
   }
 
-  .germany__box{
+  .germany__box--text {
+    grid-area: text-2;
+  }
+
+  .germany__box {
     grid-area: collage-2;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100vw;
+    height: auto;
+  }
+
+  .footprints__item {
+    width: 20vw;
+    height: auto;
+  }
+
+  .horizontal__box--item {
+    height: fit-content;
+  }
+
+  .footprint__1 {
+    transform: rotate(50deg);
+    margin-top: -3rem;
+    height: 100%;
+  }
+
+  .footprint__2 {
+    transform: rotate(30deg);
+    margin-top: -1rem;
+    height: 100%;
+  }
+
+  .footprint__3 {
+    transform: rotate(45deg);
+    margin-top: 8rem;
+    margin-left: -5rem;
+    height: 100%;
+  }
+
+  .footprint__4 {
+    transform: rotate(34deg);
+    margin-top: 8rem;
+    height: 100%;
+  }
+
+  .footprint__5 {
+    transform: rotate(50deg);
+    margin-top: 18rem;
+    margin-left: -4rem;
+    height: 100%;
+  }
+
+  .footprint__6 {
+    transform: rotate(50deg);
+    margin-top: 25rem;
+    height: 100%;
+  }
+
+  .germany__box--info {
+    justify-self: flex-end;
+    width: 40vw;
+    padding-bottom: 18rem;
+    margin-left: 1.5rem;
+  }
+
+  .germany__box--text {
+    padding-bottom: 2rem;
+  }
+
+  .germany__box--empty {
     display: none;
   }
 
+  .germany__box {
+    background-image: url(../assets/germany-collage-big.png);
+    margin-top: -15rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  p {
+    font-size: 20px;
+  }
+
+  .text__general {
+    font-size: 20px;
+    margin-left: 4rem;
+    margin-right: 2rem;
+  }
+
+  .nav__link {
+    font-size: 1rem;
+  }
+
+  .header__box {
+    grid-template-areas:
+      'header__image header__image header__title'
+      'header__cta header__cta header__cta';
+  }
+
+  .header__intro {
+    grid-area: header__title;
+    padding-top: 20rem;
+    font-size: 30px;
+    text-align: left;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .header__title {
+    font-size: 64px;
+    text-align: left;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .header__cta p {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 52px;
+  }
+
+  h3 {
+    font-size: 48px;
+    margin-left: 4rem;
+  }
+
+  .early__days--box p,
+  .bookprinting__box p,
+  .shady__box p {
+    max-width: 40vw;
+  }
+
+  .horizontal__box {
+    display: grid;
+    grid-template-areas: 'item';
+  }
+
+  .horizontal__box--item {
+    grid-area: item;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .horizontal__text--wrapper {
+    max-height: 200px;
+    max-width: 60vw;
+    align-self: flex-end;
+  }
+
+  .image__narrator,
+  .collage__france,
+  .collage__antwerp {
+    width: 30vw;
+  }
+
+  .horizontal__text--wrapper {
+    background-color: transparent;
+  }
+
+  .text__horizontal--box {
+    color: #333;
+  }
+
+  .attack__box {
+    display: grid;
+    grid-template-areas:
+      'text-1 text-2'
+      'collage collage';
+  }
+
+  .text__attack--2 {
+    grid-area: text-2;
+    margin-top: 7rem;
+  }
+
+  .text__attack--1 {
+    grid-area: text-1;
+    padding-top: 0rem;
+  }
+
+  .attack__knife--collage {
+    grid-area: collage;
+    z-index: 2;
+  }
+
+  .attack__knife--box {
+    grid-area: collage;
+    z-index: 1;
+  }
+
+  .info__box--red,
+  .info__box--yellow {
+    align-self: flex-end;
+  }
+
+  .lever__text {
+    max-width: 40vw;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+
+  .text__general {
+    margin-right: 4rem;
+  }
+
+  .info__box--red,
+  .info__box--yellow {
+    max-width: 30vw;
+  }
+
+  .header__intro {
+    font-size: 36px;
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+
+  .header__title {
+    font-size: 96px;
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
 
 }
