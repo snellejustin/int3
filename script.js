@@ -1,7 +1,6 @@
 gsap.registerPlugin(ScrollTrigger)
 
-let stopPoint;
-let stopScrollActivated = false;
+const container = document.querySelector('.floating__container');
 
 const body = document.querySelector('.body')
 const lever = document.querySelector('.interaction__lever')
@@ -158,58 +157,10 @@ const navigationHandler = () => {
     });
 }
 
-
-// const stopScrollHandler = () => {
-//     ScrollTrigger.create({
-//         trigger: '.interaction__lever',
-//         start: 'top 40%',
-//         end: 'top 39%',
-//         markers: true,
-//         onEnter: () => {
-//             if (!stopScrollParameter) {
-//                 stopScroll()
-//                 console.log('triggered')
-//             }
-//         }
-//     })
-// }
-
 const leverAudio = () => {
     const audio = new Audio('./assets/wooden-lever.mp3');
     audio.play();
 }
-
-// const stopScroll = () => {
-//     body.classList.add('stop__scrolling')
-//     lever.addEventListener('click', () => {
-//         body.classList.remove('stop__scrolling')
-//         lever.classList.add('interaction__lever--pulled')
-//         if (!audioPlayed) {
-//             leverAudio();
-//             audioPlayed = true;
-//         };
-//     })
-//     stopScrollParameter = true;
-// }
-
-const stopScrollHandler = () => {
-    const stopElement = document.querySelector('.interaction__lever');
-    if (stopElement) {
-        // Dynamically calculate the stop point: lever position minus half the viewport height
-        const viewportMid = window.innerHeight / 2;
-        stopPoint = stopElement.offsetTop - viewportMid;
-    } else {
-        console.error('Element .interaction__lever not found');
-    }
-};
-
-const stopScroll = () => {
-    if (window.scrollY >= stopPoint && !stopScrollActivated) {
-        document.body.classList.add('stop-scroll');
-        stopScrollActivated = true; // Ensure this is triggered only once
-        console.log('Scrolling stopped');
-    }
-};
 
 const leverClickHandler = () => {
     const lever = document.querySelector('.interaction__lever');
@@ -229,7 +180,6 @@ const leverClickHandler = () => {
     }
 };
 
-
 const attackHandler = () => {
     ScrollTrigger.create({
         trigger: '.attack__knife', // Target the knife element
@@ -238,25 +188,46 @@ const attackHandler = () => {
         markers: false, // Optional: add markers to see the scroll range
         scrub: true, // This links the animation to the scroll position
         rotation: 180
-    
-        });
-    }
+
+    });
+}
+
+const getRandomLetter = () => {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    return chars[Math.floor(Math.random() * chars.length)];
+};
+
+const createLetter = () => {
+    const letter = document.createElement('span');
+    letter.className = 'floating-letter';
+    letter.textContent = getRandomLetter();
+
+    // Get the container's width to constrain letter positions
+    const containerWidth = container.offsetWidth;
+
+    // Set a random horizontal position within the container
+    const randomX = Math.random() * containerWidth;
+
+    letter.style.left = `${randomX}px`; // Position within container
+
+    container.appendChild(letter);
+
+    // Remove letter after animation ends
+    letter.addEventListener('animationend', () => {
+        letter.remove();
+    });
+};
 
 const init = () => {
     navigationHandler();
     answerQuestion();
 
-    // Calculate stop point
-    stopScrollHandler();
-
-    // Directly assign handlers for scroll and resize
-    // window.onscroll = stopScroll;
-    // window.onresize = stopScrollHandler;
-
     // Handle lever click
     leverClickHandler();
 
     attackHandler();
+
+    setInterval(createLetter, 1000);
 };
 
 init();

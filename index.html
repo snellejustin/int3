@@ -41,44 +41,71 @@
   </nav>
   <div class="header__box">
     <h1 class="header__title">PLANTIN'S<br>SECRETS</h1>
-    <div>
-      <div id="floating-container"></div>
+    <div class="header__animation--box">
+      <div class="floating__container" id="floating-container"></div>
 
-<picture class="header__image--box">
-  <!-- Mobile images -->
-  <source srcset="
-      ./assets/header-image-mobile-320.avif 320w,
-      ./assets/header-image-mobile-600.avif 600w,
-      ./assets/header-image-mobile-1023.avif 1023w,
-      ./assets/header-image-desktop-1600.avif 1600w,
-      ./assets/header-image-desktop-2400.avif 2400w
+      <picture class="header__image--box">
+        <!-- Mobile images -->
+        <source srcset="
+      ./assets/header-image-320.avif 320w,
+      ./assets/header-image-600.avif 600w,
+      ./assets/header-image-1023.avif 1023w,
+      ./assets/header-image-1600.avif 1600w,
+      ./assets/header-image-2400.avif 2400w
     " sizes="(min-width: 1023px), (min-width: 340px) 100vw" type="image/avif">
 
-  <source srcset="
-      ./assets/header-image-mobile-320.webp 320w,
-      ./assets/header-image-mobile-600.webp 600w,
-      ./assets/header-image-mobile-1023.webp 1023w,
-      ./assets/header-image-desktop-1600.webp 1600w,
-      ./assets/header-image-desktop-2400.webp 2400w
+        <source srcset="
+      ./assets/header-image-320.webp 320w,
+      ./assets/header-image-600.webp 600w,
+      ./assets/header-image-1023.webp 1023w,
+      ./assets/header-image-1600.webp 1600w,
+      ./assets/header-image-2400.webp 2400w
     " sizes="(min-width: 1023px) 50vw, (min-width: 340px) 100vw" type="image/webp">
 
-  <source srcset="
-      ./assets/header-image-mobile-320.jpeg 320w,
-      ./assets/header-image-mobile-600.jpeg 600w,
-      ./assets/header-image-mobile-1023.jpeg 1023w,
-      ./assets/header-image-desktop-1600.jpeg 1600w,
-      ./assets/header-image-desktop-2400.jpeg 2400w
+        <source srcset="
+      ./assets/header-image-320.jpeg 320w,
+      ./assets/header-image-600.jpeg 600w,
+      ./assets/header-image-1023.jpeg 1023w,
+      ./assets/header-image-1600.jpeg 1600w,
+      ./assets/header-image-2400.jpeg 2400w
     " sizes="(min-width: 1023px) 50vw, (min-width: 340px) 100vw" type="image/jpeg">
 
 
-  <!-- Fallback image -->
-  <img src="./assets/header-image-mobile.avif" alt="Header image of plantin"
-    sizes="(min-width: 1023px) 50vw, (min-width: 340px) 100vw">
-</picture>
+        <!-- Fallback image -->
+        <img src="./assets/header-image.avif" alt="Header image of plantin"
+          sizes="(min-width: 1023px) 50vw, (min-width: 340px) 100vw">
+      </picture>
+
+      <picture class="header__image--box--passer">
+        <!-- Mobile images -->
+        <source srcset="
+            ./assets/passer-320.avif 320w,
+            ./assets/passer-600.avif 600w,
+            ./assets/passer-1023.avif 1023w,
+            ./assets/passer-1600.avif 1600w,
+            ./assets/passer-2400.avif 2400w
+          " sizes="50vw" type="image/avif">
+
+        <source srcset="
+            ./assets/passer-320.webp 320w,
+            ./assets/passer-600.webp 600w,
+            ./assets/passer-1023.webp 1023w,
+            ./assets/passer-1600.webp 1600w,
+            ./assets/passer-2400.webp 2400w
+          " sizes="50vw" type="image/webp">
+
+        <source srcset="
+            ./assets/passer-320.jpeg 320w,
+            ./assets/passer-600.jpeg 600w,
+            ./assets/passer-1023.jpeg 1023w,
+            ./assets/passer-1600.jpeg 1600w,
+            ./assets/passer-2400.jpeg 2400w
+          " sizes="50vw" type="image/jpeg">
 
 
-
-      <!-- <img class="header__image" src="./assets/header-image-mobile.png" alt="header image of Plantin"> -->
+        <!-- Fallback image -->
+        <img src="./assets/passer.avif" alt="image of passer" sizes="50vw">
+      </picture>
     </div>
     <p class="header__intro">The pressing story of Plantin. <br> A man to look up to.</p>
     <div class="header__cta">
@@ -150,15 +177,15 @@
       to go for a different
       careerpath, he became a bookbinder. I tend to believe this story, it’s just too crazy to make up!
     </p>
-    <div class="attack__knife--box"><img class="attack__knife" src="./assets/hand-knife.png" alt="hand holding knife">
-    </div>
-    <div class="attack__knife--collage"><img class="collage" src="./assets/attack-collage.png" alt="collage">
-      <!-- <picture>
-      <source sizes="(max-width: 1400px) 100vw, 1400px" srcset="
-                                ./assets/attack-collage.png 768px,
-                                ./assets/attack-collage-long.png 4000px" type="image/avif">
-      <img src="./assets/attack-collage.png" alt="collage">
-    </picture> -->
+    <div class="attack__animation--box">
+      <div class="attack__knife--box">
+        <img class="attack__knife" src="./assets/hand-knife.png" alt="hand holding knife">
+      </div>
+      <div class="attack__knife--collage"><img class="collage collage__attack--mobile"
+          src="./assets/attack-collage.png" alt="collage"><img class="collage collage__attack--desktop" src="./assets/attack-collage-long.png"
+          alt="collage">
+      </div>
+
     </div>
   </div>
 
