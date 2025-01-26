@@ -416,7 +416,16 @@ const finalCarousel = () => {
     })
 }
 
+const hideLoadingScreenHandler = () => {
+    const loadIcon = document.querySelector('.loading__screen');
+    loadIcon.classList.add('load__icon--hidden');
+    loadIcon.addEventListener('transitionend', () => {
+        loadIcon.style.display = 'none';
+    });
+}
+
 const init = () => {
+    
     navigationHandler();
     answerQuestion();
     leverClickHandler();
@@ -429,6 +438,8 @@ const init = () => {
     footprints();
 
     setInterval(createLetter, 1000);
+
+    hideLoadingScreenHandler();
 };
 
 init();

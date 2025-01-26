@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" type="image/svg+xml" href="public/assets/logo.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <link rel="stylesheet" href=".src/reset.css">
   <link rel="stylesheet" href="./src/style.css">
@@ -12,6 +12,7 @@
 
 
 <body class="body">
+  <div class="loading__screen"></div>
   <svg style="display:none">
     <symbol id="navicon" viewBox="0 0 24 24" fill="currentColor">
       <path d="M21 11h-18c-0.6 0-1 0.4-1 1s0.4 1 1 1h18c0.6 0 1-0.4 1-1s-0.4-1-1-1z"></path>
@@ -25,7 +26,7 @@
   </svg>
 
   <nav class="nav">
-    <img class="logo" src="public/assets/logo.png" alt="logo plantin moretus">
+    <a href="https://museumplantinmoretus.be/en"><img class="logo" src="public/assets/logo.png" alt="logo plantin moretus"></a>
     <button class="nav__button hidden" aria-label="Navigation menu" aria-expanded="false" aria-controls="nav__list">
       <svg role="img" aria-labelledby="svg-title" focusable="false">
         <title id="svg-title">Menu</title>
@@ -33,10 +34,10 @@
       </svg>
     </button>
     <ul class="nav__list" id="nav__list">
-      <li class="nav__item"><a class="nav__link" href="/#">Plan your visit</a></li>
-      <li class="nav__item"><a class="nav__link" href="/#">What is there to see</a></li>
-      <li class="nav__item"><a class="nav__link" href="/#">Collection & research</a></li>
-      <li class="nav__item"><a class="nav__link" href="/#">About us</a></li>
+      <li class="nav__item"><a class="nav__link" href="https://museumplantinmoretus.be/en/content/plan-your-visit-0">Plan your visit</a></li>
+      <li class="nav__item"><a class="nav__link" href="https://museumplantinmoretus.be/en/content/what-there-see-0">What is there to see</a></li>
+      <li class="nav__item"><a class="nav__link" href="https://museumplantinmoretus.be/en/content/collection-research-0">Collection & research</a></li>
+      <li class="nav__item"><a class="nav__link" href="https://museumplantinmoretus.be/en/content/about-museum-0">About us</a></li>
     </ul>
   </nav>
   <div class="header__box">
@@ -298,8 +299,8 @@
         life!</p>
     </div>
     <div class="button__box">
-      <button class="button button__visit" role="button">Plan your visit</button>
-      <button class="button button__collection" role="button">Collection</button>
+      <a href="https://museumplantinmoretus.be/en/content/plan-your-visit-0"><button class="button button__visit" role="button">Plan your visit</button></a>
+      <a href="https://museumplantinmoretus.be/en/content/collection-research-0"><button class="button button__collection" role="button">Collection</button></a>
     </div>
   </div>
   </div>
@@ -619,10 +620,10 @@
     <div class="footer__content">
       <ul class="footer__links">
         <li><a class="text__general" href="#">HOME</a></li>
-        <li><a class="text__general" href="#">PLAN YOUR VISIT</a></li>
-        <li><a class="text__general" href="#">WHAT IS THERE TO SEE</a></li>
-        <li><a class="text__general" href="#">COLLECTION & RESEARCH</a></li>
-        <li><a class="text__general" href="#">ABOUT US</a></li>
+        <li><a class="text__general" href="https://museumplantinmoretus.be/en/content/plan-your-visit-0">PLAN YOUR VISIT</a></li>
+        <li><a class="text__general" href="https://museumplantinmoretus.be/en/content/what-there-see-0">WHAT IS THERE TO SEE</a></li>
+        <li><a class="text__general" href="https://museumplantinmoretus.be/en/content/collection-research-0">COLLECTION & RESEARCH</a></li>
+        <li><a class="text__general" href="https://museumplantinmoretus.be/en/content/about-museum-0">ABOUT US</a></li>
       </ul>
       <div class="contact__info">
         <p>MUSEUM PLANTIN MORETUS</p>
@@ -633,10 +634,10 @@
       <div class="social__box">
         <p class="text__social">STAY IN TOUCH</p>
         <div class="social__icons">
-          <a href="#"><img src="public/assets/facebook.png" alt="Facebook"></a>
-          <a href="#"><img src="public/assets/instagram.png" alt="Instagram"></a>
-          <a href="#"><img src="public/assets/linkedin.png" alt="Podcast"></a>
-          <a href="#"><img src="public/assets/youtube.png" alt="YouTube"></a>
+          <a href="https://www.facebook.com/museumplantinmoretus/?locale=en"><img src="public/assets/facebook.png" alt="Facebook"></a>
+          <a href="https://www.instagram.com/plantinmoretus/"><img src="public/assets/instagram.png" alt="Instagram"></a>
+          <a href="https://www.linkedin.com/company/museum-plantin-moretus-in-antwerpen/?originalSubdomain=en"><img src="public/assets/linkedin.png" alt="Linkedin"></a>
+          <a href="https://www.youtube.com/channel/UCPjgG8bxctp8ld8O83JXQSw"><img src="public/assets/youtube.png" alt="YouTube"></a>
         </div>
       </div>
     </div>
