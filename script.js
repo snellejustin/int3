@@ -1,4 +1,7 @@
 gsap.registerPlugin(ScrollTrigger)
+let mm = gsap.matchMedia();
+
+let auctionAudioInstance = null;
 
 const container = document.querySelector('.floating__container');
 
@@ -94,16 +97,16 @@ const overviewHandler = (score) => {
     scoreTag.innerHTML = `${score}`
     console.log(score)
     if (score === 0) {
-        scoreText.innerHTML = 'text1'
+        scoreText.innerHTML = 'Interesting! It seems none of your answers matched Plantin’s choices. That’s the beauty of thinking differently—sometimes our perspectives reveal something unique about how we see the world. Keep exploring!'
     }
     if (score === 1) {
-        scoreText.innerHTML = 'text2'
+        scoreText.innerHTML = 'You got 1 out of 3 answers the same as Plantin! It’s fascinating to see how your choices diverge—thinking differently is what keeps things interesting. Who knows, maybe you’d have been an innovator in Plantin’s time!'
     }
     if (score === 2) {
         scoreText.innerHTML = "You matched 2 out of 3 answers with Plantin, a true printmaking icon. It's fascinating to find common ground with such a historic master.Who knew you'd share a streak with Plantin's legacy?"
     }
     if (score === 3) {
-        scoreText.innerHTML = 'text4'
+        scoreText.innerHTML = 'Impressive! You matched all of Plantin’s answers—3 out of 3! It seems you’re right on the same wavelength as one of history’s great thinkers. Fantastic work!'
     }
 }
 
@@ -180,17 +183,6 @@ const leverClickHandler = () => {
     }
 };
 
-const attackHandler = () => {
-    ScrollTrigger.create({
-        trigger: '.attack__knife', // Target the knife element
-        start: 'top 20%', // When the top of the knife reaches 20% of the viewport
-        end: 'top 80%', // When the top of the knife reaches 80% of the viewport
-        markers: false, // Optional: add markers to see the scroll range
-        scrub: true, // This links the animation to the scroll position
-        rotation: 180
-
-    });
-}
 
 const getRandomLetter = () => {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -218,14 +210,250 @@ const createLetter = () => {
     });
 };
 
+const opacityChangers = () => {
+    const elements = [".early__days--box", ".bookprinting__box", ".shady__box", ".settingtype__text", ".collage__press", ".info__box--red", ".lever__text", ".auction__text"]; // Array of target elements
+
+    elements.forEach(selector => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: selector,
+                start: "top center",
+                end: "bottom center",
+                scrub: true,
+                markers: false,
+            },
+        });
+
+        tl.to(selector, {
+            opacity: 1,
+            duration: 2,
+        });
+    });
+};
+
+// Play auction audio
+const auctionAudio = () => {
+    if (auctionAudioInstance === null) {
+        auctionAudioInstance = new Audio('./assets/auction.wav');
+        auctionAudioInstance.play().catch(error => {
+            console.error('Audio playback failed:', error);
+        });
+    }
+};
+
+// Stop auction audio
+const stopAuctionAudio = () => {
+    if (auctionAudioInstance) {
+        auctionAudioInstance.pause();
+        auctionAudioInstance.currentTime = 0;
+        auctionAudioInstance = null;
+    }
+};
+
+// Play sold sound
+const sold = () => {
+    const audio = new Audio('./assets/sold.mp3');
+    audio.play().catch(error => {
+        console.error('Audio playback failed:', error);
+    });
+};
+
+const auction = () => {
+    // Initialize ScrollTrigger directly
+    ScrollTrigger.create({
+        trigger: '.auction__box',
+        start: "top center",  // When the top of the .auction__box reaches the center of the viewport
+        end: "70% center",    // When the bottom of the .auction__box reaches the center of the viewport
+        scrub: true,          // Scrub for smooth animation
+        markers: false,        // Show markers for debugging
+        onEnter: auctionAudio, // Play auction audio when the element enters the viewport
+        onLeave: () => {
+            stopAuctionAudio(); // Stop auction audio when leaving
+            sold();              // Play sold sound
+        }
+    });
+};
+
+const footprintAudio = () => {
+    const audio = new Audio('./assets/footprint.wav');
+    audio.play();
+}
+
+// const footprintAudioMobile = () => {
+//     const audio = new Audio('./assets/footsteps-mobile.mp3');
+//     audio.play();
+// }
+
+const footprints = () => {
+    const elements = [".footprint__1", ".footprint__2", ".footprint__3", ".footprint__4", ".footprint__5", ".footprint__6"];
+
+    mm.add("(min-width: 768px)", () => {
+        elements.forEach(selector => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: selector,
+                    start: "top center",
+                    end: "bottom center",
+                    scrub: true,
+                    markers: false,
+                },
+            });
+
+            tl.to(selector, {
+                opacity: 1,
+                duration: 2,
+                onStart: footprintAudio
+            });
+        });
+    });
+};
+
+// const footprintsMobile = () => {
+//     mm.add("(max-width: 767px)", () => {
+//         const tl = gsap.timeline({
+//             scrollTrigger: {
+//                 trigger: ".footprints",
+//                 start: "top center",
+//                 end: "end center",
+//                 markers: true,
+//             }
+//         });
+//         tl.to(".footprints", {
+//             onStart: footprintAudioMobile
+//         });
+//         console.log('mobile')
+//     });
+//};
+
+
+
+
+const carousel = () => {
+    const carouselElement = document.querySelector('.horizontal__box--early');
+    const carouselWidth = carouselElement.scrollWidth;
+    const amountToScroll = carouselWidth - window.innerWidth;
+
+
+    mm.add("(max-width: 767px)", () => {
+        gsap.to('.horizontal__box--item--early', {
+            x: -amountToScroll, // Moves the content horizontally
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '.horizontal__box--early',
+                start: 'center center',
+                end: () => `+=${amountToScroll}`, // Scroll distance matches the width of the content
+                pin: true, // Pins the container
+                scrub: true, // Syncs animation to scroll
+                markers: false, // Debugging markers
+            },
+        });
+    })
+
+    mm.add("(min-width: 768px)", () => {
+        gsap.to('.horizontal__box--item--early', {
+            x: -amountToScroll, // Moves the content horizontally
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '.horizontal__box--early',
+                start: '30% center',
+                end: 'center center', // Scroll distance matches the width of the content
+                pin: false, // Pins the container
+                scrub: true, // Syncs animation to scroll
+                markers: false, // Debugging markers
+            },
+        });
+    })
+
+    mm.add("(min-width: 1024px)", () => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".narrator__box",
+                start: "top center",
+                end: "bottom center",
+                scrub: true,
+                markers: false,
+            },
+        });
+
+        tl.to(".narrator__box", {
+            opacity: 0,
+            duration: 2,
+        });
+
+        tl.to(".france__box", {
+            opacity: 1,
+            duration: 2,
+        })
+            .to(".france__box", {
+                opacity: 0,
+                duration: 2,
+            });
+
+        tl.to(".antwerp__box", {
+            opacity: 1,
+            duration: 2,
+        });
+    });
+
+};
+
+const slideInFromLeft = () => {
+    const elements = [".press__text", ".collage__settingtype", ".interaction__lever--box", ".info__box--yellow", ".collage__auction"]; // Add selectors for all target elements
+
+    elements.forEach(selector => {
+        gsap.to(selector, {
+            x: 0, // Moves the element to its original position
+            opacity: 1, // Makes it visible
+            duration: 1.5, // Animation duration
+            ease: "power2.out", // Smooth easing
+            scrollTrigger: {
+                trigger: selector, // Use the current element as the trigger
+                start: "top center", // Start when the element is at the center of the viewport
+                end: "center center", // End when the element is still at the center
+                scrub: true, // Sync animation with scroll
+                markers: false, // Debugging markers
+            },
+        });
+    });
+};
+
+
+const finalCarousel = () => {
+    const carouselElement = document.querySelector('.gulden__box');
+    const carouselWidth = carouselElement.scrollWidth;
+    const amountToScroll = carouselWidth - window.innerWidth;
+
+
+    mm.add("(max-width: 767px)", () => {
+        gsap.to('.horizontal__box--item', {
+            x: -amountToScroll, // Moves the content horizontally
+            ease: 'none',
+            scrollTrigger: {
+                trigger: '.gulden__box',
+                start: 'center center',
+                end: () => `+=${amountToScroll}`, // Scroll distance matches the width of the content
+                pin: true, // Pins the container
+                scrub: true, // Syncs animation to scroll
+                markers: false, // Debugging markers
+            },
+        });
+    })
+}
+
 const init = () => {
     navigationHandler();
     answerQuestion();
-
-    // Handle lever click
     leverClickHandler();
 
-    attackHandler();
+    // attackHandler();
+
+    carousel();
+    opacityChangers();
+    slideInFromLeft();
+    finalCarousel();
+    auction();
+    footprints();
+    // footprintsMobile();
 
     setInterval(createLetter, 1000);
 };

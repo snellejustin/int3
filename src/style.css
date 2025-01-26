@@ -104,6 +104,28 @@ h4 {
   margin-right: 1rem;
 }
 
+.early__days--box,
+.bookprinting__box,
+.shady__box,
+.settingtype__text,
+.collage__press,
+.info__box--red,
+.lever__text,
+.auction__text {
+  opacity: 0;
+}
+
+.press__text,
+.collage__settingtype,
+.interaction__lever--box,
+.info__box--yellow,
+.collage__auction {
+  transform: translateX(-100%);
+  /* Positioned off-screen to the left */
+  opacity: 0;
+  /* Initially hidden */
+}
+
 .attack__knife,
 .collage,
 .interaction__lever,
@@ -166,8 +188,52 @@ h4 {
 }
 
 .languages__box {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  height: 100vh;
+}
+
+/* Container to hold the text and parallax images */
+/* .parallax__box--wrapper {
+  padding: 50px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.text__general {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 50px;
+}
+
+.parallax__box {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.parallax__box--item {
+  margin: 10px;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  opacity: 0.8;
+  transform: scale(1);
+}
+
+.parallax__box--item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+/* Ensure that the images are spaced */
+.parallax__box--item:nth-child(odd) {
+  margin-top: 20px;
 }
 
 .info__box--red {
@@ -438,7 +504,6 @@ dl {
 .horizontal__box {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
   overflow: scroll;
 }
 
@@ -446,6 +511,10 @@ dl {
   height: 650px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+
+.horizontal__box--item--early {
   justify-content: flex-end;
 }
 
@@ -551,12 +620,11 @@ footer {
 }
 
 .gulden__box--item {
-  height: 100vh;
   justify-content: center;
 }
 
 .gulden__collage {
-  height: 70vh;
+  height: 50vh;
   width: auto;
 }
 
@@ -577,6 +645,7 @@ footer {
 }
 
 .info__box--polyglot {
+  margin-top: 3rem;
   max-width: 80vw;
   background-color: #D4A017;
   padding: .5rem;
@@ -788,6 +857,8 @@ footer {
 .gulden__box--area--1 {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 /* animation header */
@@ -845,6 +916,15 @@ footer {
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
+}
+
+.text__general--unrevealed {
+  font-family: 'EB Garamond';
+  color: #800020;
+  font-size: 2rem;
+  margin: 2rem;
+  text-align: center;
+  position: absolute;
 }
 
 @media screen and (min-width: 768px) {
@@ -992,6 +1072,7 @@ footer {
   .text__attack--2 {
     justify-self: flex-end;
     grid-area: text;
+    padding-top: 4rem;
   }
 
   .bookprinting__box,
@@ -1182,6 +1263,15 @@ footer {
     height: auto;
   }
 
+  .footprint__1,
+  .footprint__2,
+  .footprint__3,
+  .footprint__4,
+  .footprint__5,
+  .footprint__6 {
+    opacity: 0;
+  }
+
   .horizontal__box--item {
     height: fit-content;
   }
@@ -1246,6 +1336,10 @@ footer {
 
   #floating-container {
     width: 40vw;
+  }
+
+  .horizontal__box--item--early {
+    align-self: flex-end;
   }
 }
 
@@ -1394,6 +1488,16 @@ footer {
     margin-left: 2rem;
   }
 
+  .narrator__box {
+    opacity: 1;
+    /* Initially visible */
+  }
+
+  .france__box,
+  .antwerp__box {
+    opacity: 0;
+    /* Initially hidden */
+  }
 
 }
 
