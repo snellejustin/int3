@@ -177,6 +177,7 @@ const leverClickHandler = () => {
             }
             document.querySelector('.text__general--unrevealed').classList.add('hide');
             document.querySelector('.text__reveal').classList.add('reveal');
+            document.querySelector('.interaction__lever').classList.add('stopped');
         };
     } else {
         console.error('Lever element not found');

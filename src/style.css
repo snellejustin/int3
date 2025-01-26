@@ -83,6 +83,7 @@ h4 {
 .logo {
   width: 3rem;
   height: auto;
+  margin: .5rem;
 }
 
 .text__general {
@@ -124,7 +125,9 @@ h4 {
   padding-top: 8rem;
 }
 
-
+.answer p {
+  text-align: center;
+}
 
 .illegal__text {
   margin-bottom: 6rem;
@@ -245,14 +248,14 @@ h4 {
 }
 
 .info__box--red::before {
-  content: url(../assets/red-info.svg);
+  content: url(.public/assets/red-info.svg);
   position: absolute;
   margin-top: -11rem;
   left: 40%;
 }
 
 .info__box--yellow::before {
-  content: url(../assets/yellow-info.svg);
+  content: url(.public/assets/yellow-info.svg);
   position: absolute;
   margin-top: -9rem;
   left: 40%;
@@ -612,7 +615,7 @@ footer {
 }
 
 .gulden__box {
-  background-image: url(../assets/background-paper.png);
+  background-image: url(.public/assets/background-paper.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -654,7 +657,7 @@ footer {
 }
 
 .germany__box {
-  background-image: url(../assets/germany-collage.png);
+  background-image: url(.public/assets/germany-collage.png);
   background-repeat: no-repeat;
   background-size: contain;
   display: flex;
@@ -695,7 +698,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url(../assets/background-letters.png);
+  background-image: url(.public/assets/background-letters.png);
   background-repeat: no-repeat;
   background-size: cover;
   margin: 1rem;
@@ -844,6 +847,33 @@ footer {
 
 /* end of card interaction */
 
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.1;
+  }
+}
+
+.interaction__lever {
+  animation: blink 1.5s infinite;
+  cursor: pointer;
+}
+
+/* Stop blinking when clicked */
+.interaction__lever.stopped {
+  animation: none;
+  opacity: 1;
+}
+
+.interaction__lever {
+  transition: all 2s ease-in-out;
+}
+
 .collage__attack--mobile {
   display: flex;
 }
@@ -950,23 +980,23 @@ footer {
   line-height: 100%;
 }
 
-.footprints__left{
+.footprints__left {
   margin-top: -7rem;
 }
 
-.footprints__right{
+.footprints__right {
   margin-bottom: -7rem;
 }
 
 @media screen and (min-width: 768px) {
 
   .footprints__left {
-      margin-top: 0;
-    }
-  
-    .footprints__right {
-      margin-bottom: 0;
-    }
+    margin-top: 0;
+  }
+
+  .footprints__right {
+    margin-bottom: 0;
+  }
 
   .nav {
     align-items: center;
@@ -1382,7 +1412,7 @@ footer {
   }
 
   .germany__box {
-    background-image: url(../assets/germany-collage-big.png);
+    background-image: url(.public/assets/germany-collage-big.png);
     margin-top: -15rem;
   }
 
@@ -1394,7 +1424,7 @@ footer {
     align-self: flex-end;
   }
 
-  .footer__links{
+  .footer__links {
     border: 0;
   }
 }
@@ -1453,11 +1483,13 @@ footer {
     align-items: flex-start;
   }
 
-  .footer__links, .contact__info, .social__box{
+  .footer__links,
+  .contact__info,
+  .social__box {
     margin-top: 0;
   }
 
-  .footer__links{
+  .footer__links {
     margin-top: 1rem;
   }
 
@@ -1610,5 +1642,122 @@ footer {
   .info__box--yellow {
     justify-self: flex-start;
     margin-left: 10rem;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+
+  .logo {
+    width: 6rem;
+    margin: 2rem;
+  }
+
+  .text__general {
+    margin-right: 6rem;
+    margin-left: 6rem;
+  }
+
+  .header__intro {
+    padding-top: 30rem;
+    font-size: 48px;
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
+  .header__title {
+    font-size: 128px;
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
+  .floating-letter {
+    font-size: 12rem;
+  }
+
+  .nav a:any-link {
+    font-size: 2rem;
+  }
+
+  .nav__link {
+    padding-right: 4rem;
+  }
+
+  .header__cta p {
+    font-size: 4rem;
+  }
+
+  p,
+  .text__general {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 72px;
+  }
+
+  h3 {
+    font-size: 64px;
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+
+  .horizontal__text--wrapper {
+    max-height: 300px;
+    max-width: 40vw;
+  }
+
+  .horizontal__box {
+    overflow-x: hidden;
+  }
+
+  .text__attack,
+  .lever__text {
+    max-width: 30vw;
+  }
+
+  .languages__box p {
+    max-width: 40vw;
+  }
+
+  .languages__box span {
+    font-size: 5rem;
+  }
+
+  .languages__box {
+    margin-bottom: 12rem;
+  }
+
+  .interaction__lever--box {
+    width: 50vw;
+  }
+
+  .interaction__lever {
+    margin-left: -20vw;
+  }
+
+  .letter__title {
+    font-size: 3em;
+  }
+
+  .letter__text {
+    font-size: 2em;
+  }
+
+  .illegal__text{
+    width: 40vw;
+  }
+
+  .germany__box{
+    background-size: cover;
+  }
+
+  .germany__box--text{
+    width: 50vw;
+  }
+
+  .germany__box--info {
+    padding-bottom: 60rem;
+    margin-left: 6rem;
+    width: 30vw;
   }
 }
