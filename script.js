@@ -161,7 +161,7 @@ const navigationHandler = () => {
 }
 
 const leverAudio = () => {
-    const audio = new Audio('./assets/wooden-lever.mp3');
+    const audio = new Audio('./public/assets/wooden-lever.mp3');
     audio.play();
 }
 
@@ -235,7 +235,7 @@ const opacityChangers = () => {
 // Play auction audio
 const auctionAudio = () => {
     if (auctionAudioInstance === null) {
-        auctionAudioInstance = new Audio('./assets/auction.wav');
+        auctionAudioInstance = new Audio('./public/assets/auction.wav');
         auctionAudioInstance.play().catch(error => {
             console.log('Audio playback failed:');
         });
@@ -253,7 +253,7 @@ const stopAuctionAudio = () => {
 
 // Play sold sound
 const sold = () => {
-    const audio = new Audio('./assets/sold.mp3');
+    const audio = new Audio('./public/assets/sold.mp3');
     audio.play().catch(error => {
         console.log('Audio playback failed');
     });
@@ -276,7 +276,7 @@ const auction = () => {
 };
 
 const footprintAudio = () => {
-    const audio = new Audio('./assets/footprint.wav');
+    const audio = new Audio('./public/assets/footprint.wav');
     audio.play();
 }
 
