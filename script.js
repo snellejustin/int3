@@ -236,9 +236,6 @@ const opacityChangers = () => {
 const auctionAudio = () => {
     if (auctionAudioInstance === null) {
         auctionAudioInstance = new Audio('./public/assets/auction.wav');
-        auctionAudioInstance.play().catch(error => {
-            console.log('Audio playback failed:');
-        });
     }
 };
 
@@ -425,7 +422,7 @@ const hideLoadingScreenHandler = () => {
 }
 
 const init = () => {
-    
+
     navigationHandler();
     answerQuestion();
     leverClickHandler();

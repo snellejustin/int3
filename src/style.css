@@ -16,7 +16,7 @@ html {
   box-sizing: inherit;
 }
 
-p{
+p {
   line-height: 125%;
   font-family: 'DM sans', sans-serif;
 }
@@ -30,6 +30,14 @@ img {
 
 html {
   background-color: #FFFEF4;
+}
+
+.footer__links li {
+  margin-bottom: 1rem;
+}
+
+.footer__links {
+  margin-top: 1.5rem;
 }
 
 p,
@@ -1061,10 +1069,10 @@ footer {
     font-size: medium;
   }
 
-    .header__image--box{
-      margin-left: 0;
-      margin-right: 0;
-    }
+  .header__image--box {
+    margin-left: 0;
+    margin-right: 0;
+  }
 
   .nav__title {
     grid-row: 1;
@@ -1663,7 +1671,7 @@ footer {
     /* Initially hidden */
   }
 
-  .languages__box p{
+  .languages__box p {
     max-width: 55vw;
   }
 
