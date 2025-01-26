@@ -32,9 +32,7 @@ html {
   background-color: #FFFEF4;
 }
 
-.footer__links li {
-  margin-bottom: 1rem;
-}
+
 
 .footer__links {
   margin-top: 1.5rem;
@@ -634,7 +632,7 @@ footer {
 }
 
 .footer__links li {
-  margin-bottom: 5px;
+  margin-bottom: 1rem;
 }
 
 .footer__links a {
