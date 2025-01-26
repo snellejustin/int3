@@ -972,6 +972,8 @@ footer {
   z-index: 2;
   position: relative;
   top: 20%;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .header__animation--box {
@@ -1053,6 +1055,11 @@ footer {
     text-decoration: none;
     font-size: medium;
   }
+
+    .header__image--box{
+      margin-left: 0;
+      margin-right: 0;
+    }
 
   .nav__title {
     grid-row: 1;
