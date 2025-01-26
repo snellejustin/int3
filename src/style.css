@@ -53,7 +53,7 @@ p,
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #333;
+  background-color: #FFFEF4;
   transition: opacity 1s, visibility 1s;
   z-index: 100;
 }
@@ -71,7 +71,7 @@ p,
   content: "";
   width: 75px;
   height: 75px;
-  border: 15px solid #FFFEF4;
+  border: 15px solid #333;
   border-top-color: #800020;
   border-radius: 50%;
   animation: loading 0.75s ease infinite;
@@ -247,7 +247,7 @@ h4 {
 
 .attack__box,
 .languages__box {
-  background-image: url(../assets/background-paper.png);
+  background-image: url(../public/assets/background-paper.png);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
