@@ -236,7 +236,7 @@ const auctionAudio = () => {
     if (auctionAudioInstance === null) {
         auctionAudioInstance = new Audio('./assets/auction.wav');
         auctionAudioInstance.play().catch(error => {
-            console.error('Audio playback failed:', error);
+            console.log('Audio playback failed:');
         });
     }
 };
@@ -254,7 +254,7 @@ const stopAuctionAudio = () => {
 const sold = () => {
     const audio = new Audio('./assets/sold.mp3');
     audio.play().catch(error => {
-        console.error('Audio playback failed:', error);
+        console.log('Audio playback failed');
     });
 };
 
@@ -279,11 +279,6 @@ const footprintAudio = () => {
     audio.play();
 }
 
-// const footprintAudioMobile = () => {
-//     const audio = new Audio('./assets/footsteps-mobile.mp3');
-//     audio.play();
-// }
-
 const footprints = () => {
     const elements = [".footprint__1", ".footprint__2", ".footprint__3", ".footprint__4", ".footprint__5", ".footprint__6"];
 
@@ -307,26 +302,6 @@ const footprints = () => {
         });
     });
 };
-
-// const footprintsMobile = () => {
-//     mm.add("(max-width: 767px)", () => {
-//         const tl = gsap.timeline({
-//             scrollTrigger: {
-//                 trigger: ".footprints",
-//                 start: "top center",
-//                 end: "end center",
-//                 markers: true,
-//             }
-//         });
-//         tl.to(".footprints", {
-//             onStart: footprintAudioMobile
-//         });
-//         console.log('mobile')
-//     });
-//};
-
-
-
 
 const carousel = () => {
     const carouselElement = document.querySelector('.horizontal__box--early');
@@ -445,15 +420,12 @@ const init = () => {
     answerQuestion();
     leverClickHandler();
 
-    // attackHandler();
-
     carousel();
     opacityChangers();
     slideInFromLeft();
     finalCarousel();
     auction();
     footprints();
-    // footprintsMobile();
 
     setInterval(createLetter, 1000);
 };

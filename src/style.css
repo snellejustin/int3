@@ -27,8 +27,21 @@ html {
   background-color: #FFFEF4;
 }
 
-p {
+p,
+.footer__links {
   font-family: "DM sans", sans-serif;
+}
+
+.footer__links {
+  border-bottom: #FFFEF4 solid 1px;
+}
+
+.footer__links a {
+  margin-left: 0px;
+}
+
+.button__next {
+  margin: 3rem;
 }
 
 h1 {
@@ -102,6 +115,24 @@ h4 {
   align-items: center;
   margin-left: 1rem;
   margin-right: 1rem;
+}
+
+.early__days--box,
+.bookprinting__box,
+.shady__box,
+.illegal__box {
+  padding-top: 8rem;
+}
+
+
+
+.illegal__text {
+  margin-bottom: 6rem;
+}
+
+.bookprinting__box,
+.shady__box {
+  padding-bottom: 6rem;
 }
 
 .early__days--box,
@@ -189,51 +220,6 @@ h4 {
 
 .languages__box {
   height: 100vh;
-}
-
-/* Container to hold the text and parallax images */
-/* .parallax__box--wrapper {
-  padding: 50px;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-.text__general {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 50px;
-}
-
-.parallax__box {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
-}
-
-.parallax__box--item {
-  margin: 10px;
-  position: relative;
-  width: 150px;
-  height: 150px;
-  opacity: 0.8;
-  transform: scale(1);
-}
-
-.parallax__box--item img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 8px;
-  transition: transform 0.2s ease;
-}
-
-/* Ensure that the images are spaced */
-.parallax__box--item:nth-child(odd) {
-  margin-top: 20px;
 }
 
 .info__box--red {
@@ -435,6 +421,8 @@ dl {
 .nav a:any-link {
   color: black;
   text-decoration: none;
+  font-size: larger;
+  margin-top: 1rem;
 }
 
 .nav,
@@ -566,9 +554,23 @@ footer {
   padding-left: 1.5rem;
 }
 
+.social__icons img {
+  filter: invert(1);
+}
+
+.social__box {
+  margin: 2rem;
+  margin-left: 0rem;
+}
+
+.text__social {
+  color: #FFFEF4;
+}
+
 .footer__links {
   list-style: none;
-  padding: 0;
+  padding-bottom: 2rem;
+  padding-left: 0;
 }
 
 .footer__links li {
@@ -927,11 +929,55 @@ footer {
   position: absolute;
 }
 
+.languages__box--wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.reveal__quote {
+  color: #800020;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 42px;
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+  line-height: 100%;
+}
+
+.footprints__left{
+  margin-top: -7rem;
+}
+
+.footprints__right{
+  margin-bottom: -7rem;
+}
+
 @media screen and (min-width: 768px) {
+
+  .footprints__left {
+      margin-top: 0;
+    }
+  
+    .footprints__right {
+      margin-bottom: 0;
+    }
+
   .nav {
     align-items: center;
     gap: 1rem;
     display: flex;
+  }
+
+  .nav a:any-link {
+    color: black;
+    text-decoration: none;
+    font-size: medium;
   }
 
   .nav__title {
@@ -958,6 +1004,10 @@ footer {
 
   .nav__link {
     padding-inline: 2rem;
+  }
+
+  .card__box {
+    padding: 5vw;
   }
 
   .header__box {
@@ -1067,12 +1117,14 @@ footer {
 
   .text__attack--1 {
     grid-area: text;
+    align-self: flex-start;
   }
 
   .text__attack--2 {
     justify-self: flex-end;
     grid-area: text;
-    padding-top: 4rem;
+    padding-top: 12rem;
+    align-self: flex-start;
   }
 
   .bookprinting__box,
@@ -1151,7 +1203,7 @@ footer {
   }
 
   .languages__box p {
-    max-width: 60vw;
+    max-width: 65vw;
     text-align: center;
   }
 
@@ -1188,7 +1240,7 @@ footer {
   }
 
   .illustrations__quote {
-    font-size: 36px;
+    font-size: 32px;
   }
 
   .illegal__box {
@@ -1341,12 +1393,20 @@ footer {
   .horizontal__box--item--early {
     align-self: flex-end;
   }
+
+  .footer__links{
+    border: 0;
+  }
 }
 
 @media screen and (min-width: 1024px) {
 
   p {
     font-size: 20px;
+  }
+
+  .illustrations__quote {
+    font-size: 4vw;
   }
 
   .text__general {
@@ -1381,8 +1441,24 @@ footer {
     margin-right: 2rem;
   }
 
+  .bookprinting__box p {
+    margin-left: 2rem;
+  }
+
   .header__cta p {
     font-size: 24px;
+  }
+
+  .footer__content {
+    align-items: flex-start;
+  }
+
+  .footer__links, .contact__info, .social__box{
+    margin-top: 0;
+  }
+
+  .footer__links{
+    margin-top: 1rem;
   }
 
   h2 {
