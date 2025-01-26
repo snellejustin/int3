@@ -16,6 +16,11 @@ html {
   box-sizing: inherit;
 }
 
+p{
+  line-height: 125%;
+  font-family: 'DM sans', sans-serif;
+}
+
 img {
   width: 100%;
   /* Make the width responsive */
